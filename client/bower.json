@@ -1,0 +1,28 @@
+{
+  "name": "rotaract",
+  "version": "0.0.0",
+  "description": "This is a portal to be used by the members of the rotaract club of vvp engineering college.",
+  "main": "index.html",
+  "keywords": [
+    "portal",
+    "rotaract",
+    "rotary"
+  ],
+  "authors": [
+    "Tirthraj Barot"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-ui-router": "~0.2.17",
+    "bootstrap": "~3.3.6"
+  }
+}

@@ -1,0 +1,49 @@
+<h1 class = "page-header text-danger">Post Holders</h1>
+
+	<div class ="row" >
+		<div class = "col-md-12">
+			<div class="row">
+				<div class = "col-md-3 postHolderCard img-rounded" ng-click = "showModal($index)" ng-repeat="x in postHolders">
+					<div class="w3-card-2 w3-light-grey">
+						<img src = "assets/postHolders/{{x.photo}}" class = "img-responsive postHolderImg margin-auto">
+            <div class = "w3-container text-center w3-dark-grey">
+							{{x.name}}	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!-- Modal-->
+    
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header w3-container w3-dark-grey">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{modalContent.name}}</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class = "col-md-6">
+		      	<img src = "assets/postHolders/{{modalContent.photo}}" class = "img w3-image img-rounded img-responsive">
+      		</div>
+      		<div class = "col-md-6">
+      			<b>{{modalContent.name}} </b>acted as the <b>{{modalContent.post}}</b> of Rotaract Club of VVP Engineering College for the term <b>{{modalContent.term}}</b>. {{modalContent.name}}, the student of {{modalContent.dept}} Department with enrollment number {{modalContent.enroll}} is available on {{modalContent.phone}}.
+      		
+      		</div>
+      	</div>
+      </div>
+      <div class="modal-footer w3-container w3-dark-grey">
+        <button type="button" class="w3-btn w3-dark-grey" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

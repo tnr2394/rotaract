@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 400;
+  src: local('CinzelDecorative-Regular'), url("./assets/font/headerFont.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.postHolderImg{
+	max-width: 250px;
+	height: 250px;
+}
+.margin-auto{
+	margin: auto;
+}
+
+.postHolderCard {
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.padding-10{
+	padding-top: 10px;
+}
+.logoClass{
+	height: 120px;
+	width: 120px;
+}
+.heading-font{
+	font-size: 35px;
+font-family: "Lucida Console", Monaco, monospace;
+}
+.put-underline{
+	line-height: 40px;
+	border-bottom-style: groove;
+	border-bottom-color: #ddd;
+}
