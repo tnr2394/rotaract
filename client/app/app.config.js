@@ -10,6 +10,11 @@ angular.module("rotaract")
 				url : '/postHolders',
 				templateUrl : 'guest/view/postHolders.html',
 				controller : 'postHoldersCtrl'
+			})	
+			.state('testimonials',{
+				url : '/testimonials',
+				templateUrl : 'guest/view/testimonials.html',
+				controller : 'testimonialsCtrl'
 			})			
 			.state('about',{
 				url : '/about',

@@ -39,6 +39,13 @@
       		
       		</div>
       	</div>
+        <div class="row" ng-show = "modalContent.message">
+          <div class = "col-md-12">
+            <h3>Words of {{modalContent.name}}</h3>
+            <div class="messageFromPostHolder">{{modalContent.message}}
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer w3-container w3-dark-grey">
         <button type="button" class="w3-btn w3-dark-grey" data-dismiss="modal">Close</button>

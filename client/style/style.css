@@ -34,3 +34,17 @@ font-family: "Lucida Console", Monaco, monospace;
 	border-bottom-style: groove;
 	border-bottom-color: #ddd;
 }
+.messageFromPostHolder{
+	display: block;
+    unicode-bidi: embed;
+    font-family: cursive;
+    white-space: pre-wrap;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}

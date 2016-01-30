@@ -13,6 +13,17 @@ angular.module('rotaract')
 				});
 			return defer.promise;
 		}
+		obj.getTestimonials = function(){
+			var defer = $q.defer();
+
+			$http.get("http://localhost/Angular/rotaract/server/get_testimonials.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
 
 
 		return obj;
