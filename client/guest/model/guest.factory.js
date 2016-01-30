@@ -5,7 +5,7 @@ angular.module('rotaract')
 		obj.getPostHolders = function(){
 			var defer = $q.defer();
 
-			$http.get("http://localhost/Rotaract/server/get_postholders.php")
+			$http.get("http://localhost/Angular/rotaract/server/get_postholders.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
