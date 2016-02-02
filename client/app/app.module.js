@@ -1,1 +1,1 @@
-angular.module("rotaract",['ui.router']);
+angular.module("rotaract",['ui.router','ngStorage']);

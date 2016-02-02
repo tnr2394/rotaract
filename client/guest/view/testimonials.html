@@ -3,9 +3,10 @@
 <div class = "row">
 	<div class = "col-md-1"></div>
 	<div class = "col-md-10">
-		<blockquote ng-class="whatIsIt($index)" ng-repeat = "x in testimonials">
-			<p>"{{x.message}}"</p>
-			<footer>{{x.author}}<br>&nbsp;&nbsp;&nbsp;&nbsp;{{x.post}}</footer>
+		<blockquote ng-class="whatIsIt($index)" class = "margin-bottom-10" ng-repeat = "x in testimonials">
+			<i ng-class = "whatIsIt2($index)"></i>
+			<p style = "text-align:justify;">"{{x.message}}"</p>
+			<footer style = "font-weight:bold;">{{x.author}}, {{x.post}}</footer>
 		</blockquote>
 	</div>
 	<div class = "col-md-1"></div>

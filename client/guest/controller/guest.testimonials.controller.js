@@ -12,6 +12,15 @@ angular.module('rotaract')
 				});
 		}
 		$scope.whatIsIt = function (x) {
-			return (x%2==0)?"":"blockquotereverse";
+			var x = (x%2==0)?"":"blockquote-reverse";
+			// console.log("x ="+ x);
+			return x;
 		}
+		$scope.whatIsIt2 = function (x) {
+			var z = (x%2==0)?"fa myfa fa-quote-right fa-5x":"fa myfa fa-quote-left fa-5x";
+			console.log("z ="+ z);
+			return z;
+		}
+
+
 	}]);
