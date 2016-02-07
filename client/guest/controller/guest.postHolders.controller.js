@@ -16,7 +16,13 @@ angular.module('rotaract')
 
 		$scope.showModal = function(x){
 			$scope.modalContent = $scope.postHolders[x];
-			
+			guestFactory.getMessages($scope.postHolders[x].id,'postholders')
+				.then(function (response) {
+					$scope.modalContent.comments = response.data;
+					console.log($scope.modalContent.comments);
+				},function (err) {
+
+				});			
 			angular.element("#myModal").modal('show');
 		}
 	}]);

@@ -1,24 +1,28 @@
 <h2 class="page-header text-danger">Welcome {{treasurerName}}</h2>
 <div class = "row">
-	<div class = "col-md-2">
-	</div>
 	<div class = "col-md-4">
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('addEvent')">
 			<i class="fa fa-plus"></i> &nbsp;Add Event
 		</button>
-		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('addEvent')">
-			<i class="fa fa-briefcase"></i> &nbsp;Accounts
-		</button>
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('treasurer/eventList')">
+			<i class="fa fa-gear"></i> &nbsp; Edit Events
+		</button>		
 	</div>
 	<div class = "col-md-4">
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('addEvent')">
+			<i class="fa fa-plus"></i> &nbsp;Add Post Holders
+		</button>
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('treasurer/listPostholders')">
+			<i class="fa fa-gears"></i> &nbsp;Edit Post Holders
+		</button>
+	</div>
+	<div class = "col-md-4">
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('treasurer/addMessage')">
 			<i class="fa fa-envelope"></i> &nbsp;Add Message from Users
 		</button>
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('addEvent')">
-			<i class="fa fa-gear"></i> &nbsp;Edit Post Holders
+			<i class="fa fa-briefcase"></i> &nbsp;Accounts
 		</button>
-	</div>
 
-	<div class = "col-md-2">
 	</div>
 </div>

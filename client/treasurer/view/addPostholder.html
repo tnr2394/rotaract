@@ -1,0 +1,18 @@
+<h2 class = "page-header text-danger">Add Post Holder</h2>
+
+<div class = "row">
+	<div class = "col-md-12">
+		<form ng-submit="addPostholder(x)" ng-init = "x = {}" enctype="multipart/form-data">
+			<input type="text" class = "form-control" ng-model="x['name']" placeholder="Name of the Postholder">
+			<input type="text" class = "form-control" ng-model="x['dept']" placeholder="Department">
+			<input type="text" class = "form-control" ng-model="x['enroll']" placeholder="Enrollment Number">
+			<input type="text" class = "form-control" ng-model="x['phone']" placeholder="Phone Number">
+			<input type="text" class = "form-control" ng-model="x['post']" placeholder="Post">
+			<input type="text" class = "form-control" ng-model="x['term']" placeholder="Term From year - To year">
+			<input type="text" class = "form-control" ng-model="x['gender']" placeholder="Gender">
+            <input type="file" name="photo" id="fileToUpload" class = "form-control" file-model="myPhoto" accept="image/*" />
+			<textarea class = "form-control" ng-model="x['message']" placeholder = "Message from Post Holder"></textarea>
+			<button class= "btn btn-success" type = "submit">Add Post Holder</button>
+			</form>
+	</div>
+</div>

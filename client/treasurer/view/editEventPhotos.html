@@ -1,0 +1,43 @@
+<h2 class="page-header text-danger">Delete Photos.</h2>
+
+<div class="row">
+	<div class = "col-md-12">
+
+	<div class ="row" >
+		<div class = "col-md-12">
+			<div class="row">
+				<div class = "col-md-3 postHolderCard img-rounded" ng-repeat="x in imageList track by $index">
+					<div class="w3-card-2 w3-light-grey">
+						<div class="img-holder">
+							<img ng-src = "{{x.path}}" class = "img-responsive custom-img margin-auto">
+            			</div>
+            			<div class = "w3-container text-center">
+   							<button class = "btn btn-lg btn-danger w3-round-xxlarge" ng-click = "deletePhoto(x.id)">
+   								<i class="fa fa-trash"></i>
+   							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+			<!-- 	<div class="w3-col-3 col-md-3 text-center single-img" ng-repeat="x in imageList track by $index">
+			                    <div class="w3-card-2 w3-light-grey text-center">
+			                       <div class = "w3-container no-padding img-holder"> <img ng-src="{{x.path}}" class="custom-img"></div>
+			                        <div class="w3-container w3-blue">
+			                            <button class = "btn btn-danger w3-round-xxlarge" ng-click = "deletePhoto(x.id)"><i class="fa fa-trash"></i></button>
+			                        </div>
+			                    </div>
+			                </div> -->
+	</div>
+</div>
+<div class = "row jumbotron text-center">
+		<button class = "w3-btn w3-dark-grey" ng-click="goTo('treasurer/addEventPhoto')"><i class="fa fa-plus"></i>  Add New Photos to this event.</button>
+	
+</div>

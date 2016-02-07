@@ -5,10 +5,10 @@
 	</div>
 	<div class = "col-md-4">
 		<div class = "well">
-		<form ng-submit = "login(x)" ng-init = "x = {}">
-			<input type="text" class="form-control" placeholder="User Name"  ng-model = "x['username']">
-			
-			<input type="password" class="form-control" placeholder="Password"  ng-model = "x['password']">
+		<form ng-submit = "login(x)" onsubmit="validate(this)" ng-init = "x = {}">
+			<input type="text" class="form-control" name="username" placeholder="User Name"  ng-model = "x['username']">
+			<label id="usernameMsgReq" style="display:none">Please enter the username.</label>
+			<input type="password" class="form-control" name="password" placeholder="Password"  ng-model = "x['password']">
 			<button type = "submit" class="btn btn-success btn-sm">Login</button>
 		</form>
 	</div>

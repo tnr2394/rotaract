@@ -1,0 +1,12 @@
+<h2 class = "page-header text-danger"> Events List</h2>
+<table class = "table table-hover table-striped">
+	<tr>
+		<th>Event Name</th>
+		<th>Date </th>
+		<th>Place</th>
+	<tr ng-repeat = "x in eventList" ng-click="goTo(x.id)">
+		<td>{{x.name}}</td>
+		<td>{{x.date}}</td>
+		<td>{{x.place}}</td>
+	</tr>
+</table>
