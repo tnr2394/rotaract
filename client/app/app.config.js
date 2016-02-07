@@ -72,5 +72,25 @@ angular.module("rotaract")
 				}
 			});
 
+			.state('adminLogin',{
+				url : '/admin',
+				views : {
+					'main' : {	templateUrl : 'admin/view/login.html', 
+								controller : 'adminLoginCtrl'
+							}
+				}
+			});
+
+
+			.state('admin/welcome',{
+				url : '/admin/welcome',
+				views : {
+					'main' : {	templateUrl : 'admin/view/welcomeAdmin.html', 
+								controller : 'welcomeAdminCtrl'
+							}
+				}
+			});
+
+
 		$urlRouterProvider.otherwise('/');
 	}]);
