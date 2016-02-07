@@ -184,7 +184,7 @@ angular.module("rotaract")
 								controller : 'treasurerLoginCtrl'
 							}
 				}
-			});
+			})
 
 			.state('adminLogin',{
 				url : '/admin',
@@ -193,7 +193,7 @@ angular.module("rotaract")
 								controller : 'adminLoginCtrl'
 							}
 				}
-			});
+			})
 
 
 			.state('admin/welcome',{
@@ -201,6 +201,25 @@ angular.module("rotaract")
 				views : {
 					'main' : {	templateUrl : 'admin/view/welcomeAdmin.html', 
 								controller : 'welcomeAdminCtrl'
+							}
+				}
+			})
+
+			.state('presidentLogin',{
+				url : '/president',
+				views : {
+					'main' : {	templateUrl : 'president/view/login.html', 
+								controller : 'presidentLoginCtrl'
+							}
+				}
+			})
+
+
+			.state('president/welcome',{
+				url : '/president/welcome',
+				views : {
+					'main' : {	templateUrl : 'president/view/welcomePresident.html', 
+								controller : 'welcomePresidentCtrl'
 							}
 				}
 			});

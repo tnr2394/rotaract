@@ -1,4 +1,4 @@
 angular.module('rotaract')
-	.controller('adminWelcomeCtrl',['$scope','$state','$localstorage',function($scope,$state,localstorage) {
+	.controller('welcomeAdminCtrl',['$scope','$state','$localStorage',function($scope,$state,$localStorage) {
 		$scope.adminName = $localStorage.admin.name;
 	}]);
