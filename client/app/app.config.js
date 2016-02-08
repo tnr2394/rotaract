@@ -184,7 +184,46 @@ angular.module("rotaract")
 								controller : 'treasurerLoginCtrl'
 							}
 				}
+			})
+
+			.state('adminLogin',{
+				url : '/admin',
+				views : {
+					'main' : {	templateUrl : 'admin/view/login.html', 
+								controller : 'adminLoginCtrl'
+							}
+				}
+			})
+
+
+			.state('admin/welcome',{
+				url : '/admin/welcome',
+				views : {
+					'main' : {	templateUrl : 'admin/view/welcomeAdmin.html', 
+								controller : 'welcomeAdminCtrl'
+							}
+				}
+			})
+
+			.state('presidentLogin',{
+				url : '/president',
+				views : {
+					'main' : {	templateUrl : 'president/view/login.html', 
+								controller : 'presidentLoginCtrl'
+							}
+				}
+			})
+
+
+			.state('president/welcome',{
+				url : '/president/welcome',
+				views : {
+					'main' : {	templateUrl : 'president/view/welcomePresident.html', 
+								controller : 'welcomePresidentCtrl'
+							}
+				}
 			});
+
 
 		$urlRouterProvider.otherwise('/');
 	}]);
