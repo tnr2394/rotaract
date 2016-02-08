@@ -12,6 +12,17 @@ angular.module("rotaract")
 					
 				}
 			})
+			.state('treasurer',{
+				url : '/treasurer',
+				views : {
+					'top' : {	templateUrl : 'treasurer/view/menu.html'},
+					'main' : {	template : '<ui-view></ui-view>', 
+								controller : function () {
+								}
+							}
+					
+				}
+			})
 			.state('postHolders',{
 				url : '/postHolders',
 				
@@ -106,4 +117,8 @@ angular.module("rotaract")
 
 
 		// $urlRouterProvider.otherwise('/');
+	}]).run(['$rootScope','$state',function($rootScope, $state){
+		$rootScope.$state = $state;
+		console.log($rootScope);
+		console.log($rootScope.$state);
 	}]);

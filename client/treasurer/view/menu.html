@@ -1,6 +1,6 @@
-<ul class = "nav navbar-nav nav-tabs" style="width:100%;">
-				<li> <a href = "#/treasurer/welcome"><i class="fa fa-home"></i> Home</a></li>
-				<li> <a href = "#/treasurer/listPostholders"><i class="fa fa-bookmark"></i> Post Holders</a></li>
-				<li> <a href = "#/treasurer/addEvent"><i class = "glyphicon glyphicon-tasks"></i> Events</a></li>
+<ul class = "nav navbar-nav nav-tabs" style="width:100%;" ng-show="!$state.is('treasurer.login')">
+				<li> <a href = "javascript:void(0);" ui-sref="treasurer.welcome"><i class="fa fa-home"></i> Home</a></li>
+				<li> <a href = "javascript:void(0);" ui-sref="treasurer.listPostholders"><i class="fa fa-bookmark"></i> Post Holders</a></li>
+				<li> <a href = "javascript:void(0);" ui-sref="treasurer.addEvent"><i class = "glyphicon glyphicon-tasks"></i> Events</a></li>
 				<li> <a href = "#">Contact Us</a></li>
 			</ul>
