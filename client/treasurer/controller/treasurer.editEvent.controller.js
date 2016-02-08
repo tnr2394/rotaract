@@ -20,7 +20,7 @@ angular.module('rotaract')
 		$scope.updateEvent=function () {
 			treasurerFactory.editEvent($scope.event)
 				.then(function(response){
-					$state.go('treasurer/editEventPhotos',{	'id': $scope.id  })
+					$state.go('treasurer.editEventPhotos',{	'id': $scope.id  })
 				},function (err) {
 					 alert("Sorry! Event couldn't be updated right now. Please try again later."); 
 				}) 
@@ -29,7 +29,7 @@ angular.module('rotaract')
 			if(confirm("Delete this event?")){
 				treasurerFactory.deleteEvent(x)
 					.then(function(response){
-						$state.go('treasurer/eventList');
+						$state.go('treasurer.eventList');
 					},function (err) {
 						 alert("Sorry! Event couldn't be updated right now. Please try again later."); 
 					}) 

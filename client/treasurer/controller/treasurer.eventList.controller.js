@@ -11,7 +11,7 @@ angular.module('rotaract')
 		}
 
 		$scope.goTo = function (x) {
-			$state.go('treasurer/editEvent',{	'id' : x    });
+			$state.go('treasurer.editEvent',{	'id' : x    });
 		}
 
 

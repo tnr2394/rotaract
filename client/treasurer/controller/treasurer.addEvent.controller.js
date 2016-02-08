@@ -6,7 +6,7 @@ angular.module('rotaract')
 			}
 			treasurerFactory.addEvent(data).then(function(response){
 				 $scope.event = response.data;
-				 $state.go('treasurer/addEventPhoto',{ 'id' :  $scope.event.id});
+				 $state.go('treasurer.addEventPhoto',{ 'id' :  $scope.event.id});
 			},function (err) {
 				 console.log(err); 
 			})

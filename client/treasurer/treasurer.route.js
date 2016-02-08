@@ -1,7 +1,7 @@
 angular.module("rotaract")
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 		$stateProvider
-			.state('addEvent',{
+			.state('treasurer.addEvent',{
 				url : '/treasurer/addEvent',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -11,7 +11,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/addEventPhoto',{
+			.state('treasurer.addEventPhoto',{
 				url : '/treasurer/addEventPhoto/:id',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -24,7 +24,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/addPostholder',{
+			.state('treasurer.addPostholder',{
 				url : '/treasurer/addPostholder',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -34,7 +34,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/editPostholder',{
+			.state('treasurer.editPostholder',{
 				url : '/treasurer/editPostholder/:id',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -47,7 +47,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/listPostholders',{
+			.state('treasurer.listPostholders',{
 				url : '/treasurer/listPostholders',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -56,7 +56,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/addMessage',{
+			.state('treasurer.addMessage',{
 				url : '/treasurer/addMessage',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -67,7 +67,7 @@ angular.module("rotaract")
 					
 			})
 
-			.state('treasurer/welcome',{
+			.state('treasurer.welcome',{
 				url : '/treasurer/welcome',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -77,7 +77,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/eventList',{
+			.state('treasurer.eventList',{
 				url : '/treasurer/eventList',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -87,7 +87,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/editEvent',{
+			.state('treasurer.editEvent',{
 				url : '/treasurer/editEvent/:id',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -100,7 +100,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurer/editEventPhotos',{
+			.state('treasurer.editEventPhotos',{
 				url : '/treasurer/editEventPhotos/:id',
 				views : {
 					'top' : {	templateUrl : 'treasurer/view/menu.html'},
@@ -113,7 +113,7 @@ angular.module("rotaract")
 				},
 					
 			})
-			.state('treasurerLogin',{
+			.state('treasurer.login',{
 				url : '/treasurer',
 				views : {
 					'main' : {	templateUrl : 'treasurer/view/login.html', 
@@ -122,5 +122,5 @@ angular.module("rotaract")
 				}
 			});
 
-		$urlRouterProvider.otherwise('/');
+		// $urlRouterProvider.otherwise('/');
 	}]);

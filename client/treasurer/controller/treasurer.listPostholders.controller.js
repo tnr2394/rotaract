@@ -13,6 +13,6 @@ angular.module('rotaract')
 		}
 
 		$scope.goTo = function(x){
-			$state.go('treasurer/editPostholder',{	'id' : x  });
+			$state.go('treasurer.editPostholder',{	'id' : x  });
 		}
 	}])

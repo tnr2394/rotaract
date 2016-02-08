@@ -5,7 +5,7 @@ angular.module('rotaract')
 			treasurerFactory.addMessage(x)
 				.then(function (response) {
 					alert("Message Added.");
-					$state.go("treasurer/welcome"); 
+					$state.go("treasurer.welcome"); 
 				},function (err) {
 					 
 				});

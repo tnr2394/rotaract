@@ -6,7 +6,7 @@ angular.module('rotaract')
 				.then(function (response) {
 					if(response.status){
 						$localStorage.treasurer = response.data;
-						$state.go('treasurer/welcome');
+						$state.go('treasurer.welcome');
 					}
 				},function (err) {
 					console.log(err);

@@ -22,7 +22,7 @@ angular.module('rotaract')
 					 alert("There seems to be some error. Please try again later.");
 					 console.log(err);
 
-					 $state.go('treasurer/listPostholders');
+					 $state.go('treasurer.listPostholders');
 				});
 		}
 	}]);
