@@ -8,7 +8,7 @@ angular.module("rotaract")
 					
 			})
 			.state('treasurer.addEventPhoto',{
-				url : '/treasurer/addEventPhoto/:id',
+				url : '/addEventPhoto/:id',
 				templateUrl : 'treasurer/view/addEventPhotos.html', 
 				controller : 'addEventPhotoCtrl',
 				params: {
@@ -18,12 +18,12 @@ angular.module("rotaract")
 					
 			})
 			.state('treasurer.addPostholder',{
-				url : '/treasurer/addPostholder',
+				url : '/addPostholder',
 				templateUrl : 'treasurer/view/addPostholder.html', 
 				controller : 'addPostholderCtrl'
 			})
 			.state('treasurer.editPostholder',{
-				url : '/treasurer/editPostholder/:id',
+				url : '/editPostholder/:id',
 				templateUrl : 'treasurer/view/editPostholder.html', 
 				controller : 'editPostholderCtrl',
 				params: {
@@ -31,7 +31,7 @@ angular.module("rotaract")
 						}
 			})
 			.state('treasurer.listPostholders',{
-				url : '/treasurer/listPostholders',
+				url : '/listPostholders',
 				templateUrl : 'treasurer/view/listPostholders.html', 
 				controller : 'listPostholdersCtrl'
 			})
@@ -43,7 +43,7 @@ angular.module("rotaract")
 			})
 
 			.state('treasurer.welcome',{
-				url : '/treasurer/welcome',
+				url : '/welcome',
 				templateUrl : 'treasurer/view/welcomeTreasurer.html', 
 				controller : 'welcomeTreasurerCtrl'
 					
