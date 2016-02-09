@@ -125,3 +125,6 @@ font-family: "Lucida Console", Monaco, monospace;
   .affix + .container-fluid {
       padding-top: 70px;
   }
+  .no-bottom-margin {
+  	margin-bottom: 0px;
+  }

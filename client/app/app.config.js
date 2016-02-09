@@ -1,69 +1,25 @@
 angular.module("rotaract")
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 		$stateProvider
-			.state('welcome',{
-				url : '/',
 
+			.state('treasurer',{
+				url : '/treasurer',
 				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/welcome.html', 
-								controller : 'welcomeCtrl'
-							}
-					
+					top : {templateUrl : 'treasurer/view/menu.html'},
+					main : {
+						template : "<ui-view></ui-view>"
+					}
 				}
 			})
-			.state('postHolders',{
-				url : '/postHolders',
-				
+			.state('guest',{
+				url : '/guest',
 				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/postHolders.html', 
-								controller : 'postHoldersCtrl'
-							}
-					
+					top : {templateUrl : 'guest/view/menu.html'},
+					main : {
+						template : "<ui-view></ui-view>",
+						controller : function(){}
+					}
 				}
-			})	
-			.state('testimonials',{
-				url : '/testimonials',
-				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/testimonials.html', 
-								controller : 'testimonialsCtrl'
-							}
-					
-				}
-			})			
-			.state('events',{
-				url : '/events',
-				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/events.html', 
-								controller : 'eventsCtrl'
-							}
-					
-				}
-			})			
-			.state('events/details',{
-				url : '/events/details/:id',
-				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/eventsDetails.html', 
-								controller : 'eventsDetailsCtrl',
-								params : {
-									'id' : '1'								}
-							}
-					
-				}
-			})			
-			.state('about',{
-				url : '/about',
-				views : {
-					'top' : {	templateUrl : 'guest/view/menu.html'},
-					'main' : {	templateUrl : 'guest/view/about.html', 
-								controller : 'aboutCtrl'
-							}
-				},
-					
 			})
 
 			.state('adminLogin',{
@@ -105,5 +61,7 @@ angular.module("rotaract")
 			});
 
 
-		// $urlRouterProvider.otherwise('/');
-	}]);
+		$urlRouterProvider.otherwise('/guest/');
+	}]).run(function ($state,$rootScope) {
+    $rootScope.$state = $state;
+});
