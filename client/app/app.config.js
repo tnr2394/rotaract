@@ -65,18 +65,17 @@ angular.module("rotaract")
 
 
 		$urlRouterProvider.otherwise('/guest/');
-	}]).run(function ($state,$rootScope) {
-    $rootScope.$state = $state;
-});
+	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
+    	$rootScope.$state = $state;
+    	$rootScope.$stateParams = $stateParams;
 
 
-}]);
+    	$rootScope.$on('$stateChangeStart',function(event, toState, fromState){
+			if(toState.name.substr(0,9)=='treasurer'){
+				if(typeof($localStorage.currentPostHolder)=='undefined'){
+					window.location = "http://localhost/Angular/rotaract/client/";
+				}
+			}
+    	});
 
-
-	}]).run(['$rootScope','$state',function($rootScope, $state){
-		$rootScope.$state = $state;
-		console.log($rootScope);
-		console.log($rootScope.$state);
-	}]);
-
-
+	});
