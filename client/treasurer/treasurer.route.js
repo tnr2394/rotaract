@@ -11,23 +11,21 @@ angular.module("rotaract")
 				url : '/addEventPhoto/:id',
 				templateUrl : 'treasurer/view/addEventPhotos.html', 
 				controller : 'addEventPhotoCtrl',
-				 params: {
-				    'id': '1', 
+				params: {
+				    'id': '1' 
 				  }
-					
 			})
 			.state('treasurer.addPostholder',{
 				url : '/addPostholder',
 				templateUrl : 'treasurer/view/addPostholder.html', 
 				controller : 'addPostholderCtrl'
-					
 			})
 			.state('treasurer.editPostholder',{
 				url : '/editPostholder/:id',
 				templateUrl : 'treasurer/view/editPostholder.html', 
 				controller : 'editPostholderCtrl',
 				 params: {
-				    'id': '1', 
+				    'id': '1'
 				  }
 			})
 			.state('treasurer.listPostholders',{

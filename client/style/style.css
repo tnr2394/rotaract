@@ -62,7 +62,7 @@ font-family: "Lucida Console", Monaco, monospace;
   margin-bottom: 10px;
 }
 
-#file-dropzone{
+#fileDropzone{
 	border-style: dashed;
 	border-width: thick;
 	border-color: #333;
@@ -125,6 +125,13 @@ font-family: "Lucida Console", Monaco, monospace;
   .affix + .container-fluid {
       padding-top: 70px;
   }
+<<<<<<< HEAD
   .no-bottom-margin {
   	margin-bottom: 0px;
   }
+=======
+
+.no-bottom-margin{
+	margin-bottom: 0px;
+}
+>>>>>>> eea28a977589b6cf36890bc3f47aa1db5b3ea801
