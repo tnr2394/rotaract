@@ -3,7 +3,7 @@
 	<div class = "col-md-12">
 		<img ng-src="{{photo}}" style="width:60%;height:auto;" class="img-responsive w3-image margin-auto">
 		<br>
-		<div class="well ">
+		<div class="jumbotron">
 			<h3 class="text-primary">About {{event.name}}</h3>
 			<div style = "text-indent:100px">{{event.description}}</div>
 		</div>
@@ -19,7 +19,47 @@
 						<hr>
 					</div>
 				</div>
+		</div>
+	</div>
+</div>
+<h2 class = "text-primary page-header" ng-click="showPhotos()"><i class="fa {{myIcon}}"></i> Event Photos</h2>
+<div class="row" ng-show="show">
+	<div class = "col-md-3 postHolderCard img-rounded" ng-repeat="y in images track by $index">
+		<div class="w3-card-2">	
+			<div class ="img-holder">
+				<img ng-src = "{{y.path}}" ng-click="showModal(y.path)" class = "img-responsive custom-img margin-auto">
+			</div>
+			<div class = "w3-container text-center bg-primary">
+				&nbsp;
 			</div>
 		</div>
 	</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal-->
+    
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header w3-container w3-dark-grey">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+			<img src = "{{modalContent}}" class = "w3-image img-responsive img-rounded">
+      </div>
+      <div class="modal-footer w3-container w3-dark-grey">
+        <button type="button" class="w3-btn w3-dark-grey" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
