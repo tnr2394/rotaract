@@ -11,6 +11,13 @@
 			$ara['post'] = $x['post'];
 			$ara['id'] = $x['id'];
 			$ara['status'] = true;
+			// Start the session
+	
+			// Set session variables
+			$_SESSION["username"] = $x['username'];
+			$_SESSION["password"] = $x['password'];
+			$_SESSION["post"] = $x['post'];
+
 			break;
 		}
 	}

@@ -106,4 +106,5 @@ angular.module("rotaract")
 
 
 		// $urlRouterProvider.otherwise('/');
-	}]);
+}]);
+
