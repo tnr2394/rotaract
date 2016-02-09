@@ -3,7 +3,7 @@ angular.module('rotaract')
 		var obj = {};
 		obj.doLogin = function(x){
 			var defer = $q.defer();
-			$http.get("http://localhost/Angular/rotaract/server/admin/adminLogin.php?username="+x.username+"&password="+x.password)
+			$http.get("http://localhost/Angular/rotaract/server/admin/Login.php?username="+x.username+"&password="+x.password)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {

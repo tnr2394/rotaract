@@ -24,59 +24,35 @@ angular.module("rotaract")
 			})
 
 
-			.state('adminLogin',{
+			.state('admin',{
 				url : '/admin',
 				views : {
-					'main' : {	templateUrl : 'admin/view/login.html', 
-								controller : 'adminLoginCtrl'
-							}
+					top : {templateUrl : 'admin/view/menu.html'},
+					main : {
+						template : "<ui-view></ui-view>",
+						//controller : function(){}
+					}
 				}
 			})
 
 
-			.state('admin/welcome',{
-				url : '/admin/welcome',
-				views : {
-					'main' : {	templateUrl : 'admin/view/welcomeAdmin.html', 
-								controller : 'welcomeAdminCtrl'
-							}
-				}
-			})
-
-			.state('presidentLogin',{
+			.state('president',{
 				url : '/president',
 				views : {
-					'main' : {	templateUrl : 'president/view/login.html', 
-								controller : 'presidentLoginCtrl'
-							}
-				}
-			})
-
-
-			.state('president/welcome',{
-				url : '/president/welcome',
-				views : {
-					'main' : {	templateUrl : 'president/view/welcomePresident.html', 
-								controller : 'welcomePresidentCtrl'
-							}
+					top : {templateUrl : 'president/view/menu.html'},
+					main : {
+						template : "<ui-view></ui-view>",
+						//controller : function(){}
+					}
 				}
 			});
 
 
 
-		$urlRouterProvider.otherwise('/guest/');
+		//$urlRouterProvider.otherwise('/guest/');
 	}]).run(function ($state,$rootScope) {
     $rootScope.$state = $state;
 });
 
-
-}]);
-
-
-	}]).run(['$rootScope','$state',function($rootScope, $state){
-		$rootScope.$state = $state;
-		console.log($rootScope);
-		console.log($rootScope.$state);
-	}]);
 
 
