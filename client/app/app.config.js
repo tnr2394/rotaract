@@ -23,18 +23,6 @@ angular.module("rotaract")
 				}
 			})
 
-			.state('treasurer',{
-				url : '/treasurer',
-				views : {
-					'top' : {	templateUrl : 'treasurer/view/menu.html'},
-					'main' : {	template : '<ui-view></ui-view>', 
-								controller : function () {
-								}
-							}
-					
-				}
-			})
-
 
 			.state('adminLogin',{
 				url : '/admin',
@@ -81,7 +69,6 @@ angular.module("rotaract")
     $rootScope.$state = $state;
 });
 
-		//$urlRouterProvider.otherwise('/');
 
 }]);
 
@@ -91,4 +78,5 @@ angular.module("rotaract")
 		console.log($rootScope);
 		console.log($rootScope.$state);
 	}]);
+
 
