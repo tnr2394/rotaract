@@ -10,6 +10,6 @@ angular.module('rotaract')
 				});
 		}
 		$scope.goTo = function(x){
-			$state.go('events/details',{'id': x});
+			$state.go('guest.events/details',{'id': x});
 		}
 	}]);
