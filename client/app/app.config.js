@@ -5,7 +5,15 @@ angular.module("rotaract")
 			.state('treasurer',{
 				url : '/treasurer',
 				views : {
-					top : {templateUrl : 'treasurer/view/menu.html'},
+					top : {templateUrl : 'treasurer/view/menu.html',
+							controller : function($scope,$localStorage,$state){
+								$scope.logout = function(){
+
+  									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}		
+							}
+						},
 					main : {
 						template : "<ui-view></ui-view>"
 					}
@@ -27,10 +35,17 @@ angular.module("rotaract")
 			.state('admin',{
 				url : '/admin',
 				views : {
-					top : {templateUrl : 'admin/view/menu.html'},
+					top : {templateUrl : 'admin/view/menu.html',
+							controller : function($scope,$state,$localStorage){
+								$scope.logout = function(){
+
+  									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}
+							}
+						},
 					main : {
-						template : "<ui-view></ui-view>",
-						//controller : function(){}
+						template : "<ui-view></ui-view>"
 					}
 				}
 			})
@@ -39,20 +54,43 @@ angular.module("rotaract")
 			.state('president',{
 				url : '/president',
 				views : {
-					top : {templateUrl : 'president/view/menu.html'},
+					top : {templateUrl : 'president/view/menu.html',
+							controller : function($scope,$state,$localStorage){
+									$scope.logout = function(){
+									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}
+							},
 					main : {
-						template : "<ui-view></ui-view>",
-						//controller : function(){}
+						template : "<ui-view></ui-view>"}
+				}
+			}
+		});
+
+
+
+		// $urlRouterProvider.otherwise('/guest/');
+	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
+    	$rootScope.$state = $state;
+    	$rootScope.$stateParams = $stateParams;
+
+    	$rootScope.$on('$stateChangeSuccess',function(event, toState, fromState){
+
+    		console.log("RUN");
+
+			if(toState.name.substr(0,9).localeCompare('treasurer')==0||toState.name.substr(0,9).localeCompare('president')==0||toState.name.substr(0,5).localeCompare('admin')==0)	{
+
+				if(toState.name.localeCompare("treasurer.login")==0 || toState.name.localeCompare("president.login")==0 || toState.name.localeCompare("admin.login")==0){
+				}
+				else{
+					if(typeof($localStorage.currentPostHolder)=='undefined' || $localStorage.currentPostHolder=='null'){
+						console.log(typeof($localStorage.currentPostHolder));
+						$state.go('guest.welcome');
 					}
 				}
-			});
-
-
-
-		//$urlRouterProvider.otherwise('/guest/');
-	}]).run(function ($state,$rootScope) {
-    $rootScope.$state = $state;
-});
-
-
-
+			}
+			else{
+				console.log("IT HAS TO BE LOGGED IN OR GUEST");
+			}
+    	});
+  });

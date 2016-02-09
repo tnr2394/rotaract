@@ -1,4 +1,4 @@
-angular.module("rotaract",['ui.router','ngStorage']);
+angular.module("rotaract",['ui.router','ngStorage','ngAnimate']);
 
 
 

@@ -69,9 +69,7 @@ angular.module("rotaract")
 			.state('treasurer.login',{
 				url : '/login',
 				templateUrl : 'treasurer/view/login.html', 
-				controller : function(){
-					// alert("hio");
-				}
+				controller : 'treasurerLoginCtrl'
 			});
 
 	}]);

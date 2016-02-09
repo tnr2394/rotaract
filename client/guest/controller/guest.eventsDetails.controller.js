@@ -30,7 +30,34 @@ angular.module('rotaract')
 				},function (err) {
 					  alert("There seems to be some error. Please try again later.");
 					  console.log(err);
+				});	
+			guestFactory.getPhotos($scope.id)
+				.then(function (response) {
+					$scope.images = response.data;
+					console.log("EVENT PHOTOS");
+					console.log($scope.images);
+				},function (err) {
+					  alert("There seems to be some error. Please try again later.");
+					  console.log(err);
 				});
 
+		}
+		$scope.myIcon="fa-arrow-right";
+		var counter = 1;
+		$scope.showPhotos = function(){
+			counter++;
+			if(counter%2==0){
+				$scope.myIcon = "fa-arrow-down";
+				$scope.show = true;
+			}
+			else{
+				$scope.myIcon = "fa-arrow-right";
+				$scope.show = false;
+			}
+			
+		}
+		$scope.showModal = function(x){
+			$scope.modalContent = x;
+			angular.element("#myModal").modal('show');
 		}
 	}])

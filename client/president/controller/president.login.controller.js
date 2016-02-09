@@ -7,7 +7,7 @@ angular.module('rotaract')
 				.then(function (response) {
 					if(response.data.status){
 						$localStorage.currentPostHolder = response.data;
-						$state.go('president/welcome');
+						$state.go('president.welcome');
 					}
 					else
 					{

@@ -1,11 +1,13 @@
 <?php
+	
+	error_reporting(0);
 	$con = mysqli_connect('localhost','root','') or die(mysql_error());
 	$con->set_charset('utf8');
 	mysqli_select_db($con,'rotaract') or die(mysql_error());
 
 	session_start();
 	$filename=substr($_SERVER['PHP_SELF'],-9);
-	echo "$filename";
+
 	function checkSession()
 	{
 		if($filename!="Login.php")
