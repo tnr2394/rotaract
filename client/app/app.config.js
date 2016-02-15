@@ -79,8 +79,6 @@ angular.module("rotaract")
 
     	$rootScope.$on('$stateChangeSuccess',function(event, toState, fromState){
 
-    		console.log("RUN");
-
 			if(toState.name.substr(0,9).localeCompare('treasurer')==0||toState.name.substr(0,9).localeCompare('president')==0||toState.name.substr(0,5).localeCompare('admin')==0)	{
 
 				if(toState.name.localeCompare("treasurer.login")==0 || toState.name.localeCompare("president.login")==0 || toState.name.localeCompare("admin.login")==0){
