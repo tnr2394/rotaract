@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2016 at 11:31 AM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: Feb 15, 2016 at 10:29 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -23,23 +23,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `accountdetails`
+--
+
+CREATE TABLE IF NOT EXISTS `accountdetails` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `name` varchar(35) NOT NULL,
+  `classN` varchar(35) NOT NULL,
+  `amount` int(10) NOT NULL,
+  `type` text NOT NULL,
+  `details` varchar(50) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `currentpostholders`
 --
 
 CREATE TABLE IF NOT EXISTS `currentpostholders` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `post` text NOT NULL,
   `username` text NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `password` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `currentpostholders`
 --
 
 INSERT INTO `currentpostholders` (`id`, `name`, `post`, `username`, `password`) VALUES
-(1, 'Dhaval SecondName', 'treasurer', 'treasurer', 'password');
+(1, 'Dhaval SecondName', 'treasurer', 'treasurer', 'password'),
+(2, 'Karan Rathod', 'Admin', 'admin', 'password'),
+(3, 'Dharamjeet Chauhan', 'President', 'president', 'password');
 
 -- --------------------------------------------------------
 
@@ -48,10 +68,11 @@ INSERT INTO `currentpostholders` (`id`, `name`, `post`, `username`, `password`) 
 --
 
 CREATE TABLE IF NOT EXISTS `eventphotos` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `eventid` int(11) NOT NULL,
-  `path` varchar(100) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=435 ;
+  `path` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=438 ;
 
 --
 -- Dumping data for table `eventphotos`
@@ -229,7 +250,10 @@ INSERT INTO `eventphotos` (`id`, `eventid`, `path`) VALUES
 (431, 9, 'events/9/tirthrajbarot.jpg'),
 (432, 9, 'events/9/vivekvaghela.jpg'),
 (433, 17, 'events/17/10610481_523205417812289_317109204443073622_n.jpg'),
-(434, 9, 'events/9/560209_612944712171692_4693219679552282524_n.jpg');
+(434, 9, 'events/9/560209_612944712171692_4693219679552282524_n.jpg'),
+(435, 18, 'events/18/ss1.png'),
+(436, 18, 'events/18/ss2.png'),
+(437, 18, 'events/18/ss3.png');
 
 -- --------------------------------------------------------
 
@@ -242,7 +266,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `date` date NOT NULL,
   `place` text NOT NULL,
   `name` text NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -254,7 +279,10 @@ INSERT INTO `events` (`id`, `date`, `place`, `name`, `description`) VALUES
 (9, '2016-01-15', 'Ahmedabad', 'Test Event 1', 'To sorry world an at do spoil along. Incommode he depending do frankness remainder to. Edward day almost active him friend thirty piqued. People as period twenty my extent as. Set was better abroad ham plenty secure had horses. Admiration has sir decisively excellence say everything inhabiting acceptance. Sooner settle add put you sudden him. Placing assured be if removed it besides on. Far shed each high read are men over day. Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had now those ought set often which. Or snug dull he show more true wish. No at many deny away miss evil. On in so indeed spirit an mother. Amounted old strictly but marianne admitted. People former is remove remain as.'),
 (15, '2015-01-16', 'Rajkot', 'Test Event 2', 'Sense child do state to defer mr of forty. Become latter but nor abroad wisdom waited. Was delivered gentleman acuteness but daughters. In as of whole as match asked. Pleasure exertion put add entrance distance drawings. In equally matters showing greatly it as. Want name any wise are able park when. Saw vicinity judgment remember finished men throwing. That know ask case sex ham dear her spot. Weddings followed the all marianne nor whatever settling. Perhaps six prudent several her had offence. Did had way law dinner square tastes. Recommend concealed yet her procuring see consulted depending. Adieus hunted end plenty are his she afraid. Resources agreement contained propriety applauded neglected use yet. In up so discovery my middleton eagerness dejection explained. Estimating excellence ye contrasted insensible as. Oh up unsatiable advantages decisively as at interested. Present suppose in esteems in demesne colonel it to. End horrible she landlord screened stanhill. Repeated offended you opinions off dissuade ask packages screened. She alteration everything sympathize impossible his get compliment. Collected few extremity suffering met had sportsman.'),
 (16, '2016-02-02', 'Ahmedabad', 'U.S.Pizza', 'Sense child do state to defer mr of forty. Become latter but nor abroad wisdom waited. Was delivered gentleman acuteness but daughters. In as of whole as match asked. Pleasure exertion put add entrance distance drawings. In equally matters showing greatly it as. Want name any wise are able park when. Saw vicinity judgment remember finished men throwing. That know ask case sex ham dear her spot. Weddings followed the all marianne nor whatever settling. Perhaps six prudent several her had offence. Did had way law dinner square tastes. Recommend concealed yet her procuring see consulted depending. Adieus hunted end plenty are his she afraid. Resources agreement contained propriety applauded neglected use yet. In up so discovery my middleton eagerness dejection explained. Estimating excellence ye contrasted insensible as. Oh up unsatiable advantages decisively as at interested. Present suppose in esteems in demesne colonel it to. End horrible she landlord screened stanhill. Repeated offended you opinions off dissuade ask packages screened. She alteration everything sympathize impossible his get compliment. Collected few extremity suffering met had sportsman.'),
-(17, '2015-01-16', 'Rajkot', 'Bhagwad Saptah', 'Rotary Club of Rajkot Midtown is a leading service organization devoted to kindle kindness for mankind. Care and concern for the community is a culture cultivated by the passion and compassion of its members. It has embellished Rajkot with heart rendering and soul satisfying projects like Lapasari reservoir dam, Dolls Museum, earthquake rehabilitation township and school at Metoda, Rotary Midtown Library, Swashray vocational center for women and Manjul playschool-- all of which have brought happiness and harmony for our city.\nAs this unique service society stands on the threshold of its 21st inception-the age of maturity, the age of optimum natural growth, it asked itself a different and the difficult question--"When was the last time that you did something for the first time?"\nA medical center with basic health facilities under one roof has been a cherished dream. Medical camps and activities in collaboration with other service groups are conducted through the year. Serving and supporting, soothing and saving the sick is a surprisingly supreme satisfaction-the sanctum of "Service to man is service to God". To heal is to give hope; to give hope is to hail happiness.\nThe Shrimad Bhagwat Katha - the sacred summit of salvation was the gratifying gratitude, the blissful blessing, the divine devotion for achieving the aim. \nRotary Club of Rajkot Midtown is organizing the Shrimad Bhagwat Katha on Race Course grounds from 17th January to 23rd January, 2015. The timings are 3 pm to 6 pm and it is an open for all invitation. It is a sincere and cordial request for all to join in for this mega service project-the magnum opus-the Maha Yagna. The Vyas Peeth will be adorned by the revered Shri Yadunathji Bawa of Kadi, an orator par excellence and a service seer himself. His simple and fluent flow of language as well as understanding and explanation of the nuances of this scripture is to be seen to be believed. It will certainly be a once in a lifetime experience, not to be missed. His discourses on time management are supposed to be interesting and riveting. His sessions on a special kind of Yoga are also quite luminescent.\nThe Shrimad Bhagwat Katha is considered to be a sacred book for Hindus. It consists of divine eternal tales of supreme Lord. It is a treasure trove of lessons of life. It imparts transcendental knowledge with tremendous insight and profound vision. It offers solace, comfort and equanimity and provides emancipation from ignorance and fear. Metamorphosis may manifest. \nRace Course, Rotary and Rajkot beckon. This will be an experience to enjoy and enthrall, enlighten and enliven. An ethereal event. Celebrate the celestial charm of charity. Giving is living. Giving gives prosperity for posterity. As Sir Winston Churchill put it- "We make a living by what we get; we make a life by what we give". Come and share the sweetness of service.\nYou can also get a bit of goodness by booking POTHI which will be as sacred and lucky opportuniry as hosting a Bhagwad saptah on your own. \nAlso visit them on FB on : https://www.facebook.com/rotarybhagwatkatha');
+(17, '2015-01-16', 'Rajkot', 'Bhagwad Saptah', 'Rotary Club of Rajkot Midtown is a leading service organization devoted to kindle kindness for mankind. Care and concern for the community is a culture cultivated by the passion and compassion of its members. It has embellished Rajkot with heart rendering and soul satisfying projects like Lapasari reservoir dam, Dolls Museum, earthquake rehabilitation township and school at Metoda, Rotary Midtown Library, Swashray vocational center for women and Manjul playschool-- all of which have brought happiness and harmony for our city.\nAs this unique service society stands on the threshold of its 21st inception-the age of maturity, the age of optimum natural growth, it asked itself a different and the difficult question--"When was the last time that you did something for the first time?"\nA medical center with basic health facilities under one roof has been a cherished dream. Medical camps and activities in collaboration with other service groups are conducted through the year. Serving and supporting, soothing and saving the sick is a surprisingly supreme satisfaction-the sanctum of "Service to man is service to God". To heal is to give hope; to give hope is to hail happiness.\nThe Shrimad Bhagwat Katha - the sacred summit of salvation was the gratifying gratitude, the blissful blessing, the divine devotion for achieving the aim. \nRotary Club of Rajkot Midtown is organizing the Shrimad Bhagwat Katha on Race Course grounds from 17th January to 23rd January, 2015. The timings are 3 pm to 6 pm and it is an open for all invitation. It is a sincere and cordial request for all to join in for this mega service project-the magnum opus-the Maha Yagna. The Vyas Peeth will be adorned by the revered Shri Yadunathji Bawa of Kadi, an orator par excellence and a service seer himself. His simple and fluent flow of language as well as understanding and explanation of the nuances of this scripture is to be seen to be believed. It will certainly be a once in a lifetime experience, not to be missed. His discourses on time management are supposed to be interesting and riveting. His sessions on a special kind of Yoga are also quite luminescent.\nThe Shrimad Bhagwat Katha is considered to be a sacred book for Hindus. It consists of divine eternal tales of supreme Lord. It is a treasure trove of lessons of life. It imparts transcendental knowledge with tremendous insight and profound vision. It offers solace, comfort and equanimity and provides emancipation from ignorance and fear. Metamorphosis may manifest. \nRace Course, Rotary and Rajkot beckon. This will be an experience to enjoy and enthrall, enlighten and enliven. An ethereal event. Celebrate the celestial charm of charity. Giving is living. Giving gives prosperity for posterity. As Sir Winston Churchill put it- "We make a living by what we get; we make a life by what we give". Come and share the sweetness of service.\nYou can also get a bit of goodness by booking POTHI which will be as sacred and lucky opportuniry as hosting a Bhagwad saptah on your own. \nAlso visit them on FB on : https://www.facebook.com/rotarybhagwatkatha'),
+(18, '2016-02-08', 'Dikra nu Ghar-Vruddhashram, Rajkot', 'Visit to Old Age Home', 'Rotaractors went to an old age home ``Smt. R. D. Gardi ``Dikra nu Ghar – Vrudhaashram``. The owner was Mukesh Doshi and he warmly welcomed all of us. He guided us through the old age home. First of all we were taken to the divine temple of lord shiva, then we were taken to the temple of `Bharat Mata` which was the center of attraction for all of us. We observed the dining area where all elders sit together for meals, we saw their store room where they keep their groceries. There was also mini-theater and an auditorium under construction followed by a beautiful garden where elders sit and enjoy lovely sunrise and sunset. After then, he took us to elders who were living there, we visited their residency.\nElders laughed and talked their heart out with Rotaractors. They also shared some of their incidents. It was worth spending time there. There was each and every facility for those elders proper nurture. They treated us as if they have got their own kids and we were also happy for their love.\nEvery Rotaractor were really happy and got many lessons of life. Elders are treasure of love and experience, all they wish is love and small part of our time.\nThank you Mukesh Doshi for letting us visit the Old age home and congratulations to every rotaractor who were there.'),
+(19, '2016-02-13', 'Ahmedabad', 'Valintine Day', 'His followed carriage proposal entrance directly had elegance. Greater for cottage gay parties natural. Remaining he furniture on he discourse suspected perpetual. Power dried her taken place day ought the. Four and our ham west miss. Education shameless who middleton agreement how. We in found world chief is at means weeks smile. \n\nAdieus except say barton put feebly favour him. Entreaties unpleasant sufficient few pianoforte discovered uncommonly ask. Morning cousins amongst in mr weather do neither. Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add. And park eyes too more him. Simple excuse active had son wholly coming number add. Though all excuse ladies rather regard assure yet. If feelings so prospect no as raptures quitting.'),
+(20, '2016-02-13', 'Ahmedabad', 'asdasdas', 'asasdasdasdasdasdasd');
 
 -- --------------------------------------------------------
 
@@ -263,13 +291,14 @@ INSERT INTO `events` (`id`, `date`, `place`, `name`, `description`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `membersmessage` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `message` text NOT NULL,
   `for` text NOT NULL,
   `xid` int(11) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `membersmessage`
@@ -283,7 +312,8 @@ INSERT INTO `membersmessage` (`id`, `name`, `message`, `for`, `xid`, `date`) VAL
 (5, 'Dharamjeet Chauhan', 'At this time we had managed enough of people who can work with us. Tirthraj firstly denied me to take up farewell but I said we need to take it to keep the name of Rotaract going,  so we arranged a meeting for all members in which it was finally decided to perform. We dint knew  that we had to do hardwork that was above our level but when Tirthraj was there to motivate it was okk for all of us. And that time he was jus like an angry man... But it was necessary for the work to be completed on time. We all were satisfied with the performance though we didonly for a small part. After the performance,  Tirthraj opened my vision of appreciating the one who performed well and taught me a new lesson that I was of not aware of.', 'events', 17, '2016-02-06 12:00:55'),
 (6, 'Aniket Pandya', 'He is a good guy', 'postholders', 1, '2016-02-07 07:09:42'),
 (8, 'Heer Oza', 'I was extremely joyful distributing sweets in slums.', 'events', 3, '2016-02-07 07:12:06'),
-(9, 'Bhishmapratapsinh Dabhi', 'Truly inspiration to all of us. It was great working with you.', 'postholders', 1, '2016-02-07 09:20:52');
+(9, 'Bhishmapratapsinh Dabhi', 'Truly inspiration to all of us. It was great working with you.', 'postholders', 1, '2016-02-07 09:20:52'),
+(10, 'Karan Rathod', 'Thirth was a great leader when I worked under his leadership.', 'postholders', 6, '2016-02-12 04:45:06');
 
 -- --------------------------------------------------------
 
@@ -292,7 +322,7 @@ INSERT INTO `membersmessage` (`id`, `name`, `message`, `for`, `xid`, `date`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `postholders` (
-`id` int(5) NOT NULL,
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `dept` text NOT NULL,
   `enroll` text NOT NULL,
@@ -301,22 +331,20 @@ CREATE TABLE IF NOT EXISTS `postholders` (
   `term` text NOT NULL,
   `gender` text NOT NULL,
   `photo` text NOT NULL,
-  `message` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+  `message` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `postholders`
 --
 
 INSERT INTO `postholders` (`id`, `name`, `dept`, `enroll`, `phone`, `post`, `term`, `gender`, `photo`, `message`) VALUES
-(1, 'Tirthraj Barot', 'IT', '130473116002', '9979430007', 'Secretary', '2013-2014', 'Male', 'DSC00119.JPG', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
 (2, 'Vivek Vaghela', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'vivekvaghela.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(3, 'Tirthraj Barot 123', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'mohitshah.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(4, 'Tirthraj Barot 123', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'himeshsuthar.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(5, 'Tirthraj Barot 123', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'dharamjeetchauhan.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(6, 'Tirthraj Barot 123', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'tirthrajbarot.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(7, 'Aniket Pandya', 'IT', '130473116002', '9979430007', 'Manager', '2014-2015', 'Male', 'aniketpandya.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
-(8, 'Tirthraj Barot 123', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'IMG-20141020-WA0002 - Copy.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.');
+(3, 'Mohit Shah', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'mohitshah.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
+(4, 'Himesh Suthar', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'himeshsuthar.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
+(5, 'Dharamjeet Chauhan', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'dharamjeetchauhan.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.'),
+(6, 'Tirthraj Barot', 'IT', '130473116002', '9979430007', 'secretary', '2013-2014', 'Male', 'tirthrajbarot.jpg', 'It was an excellent experience working as the vice president of the club. It is a very special occasion for us as we are actually retiring from a club of which we were the founder members. This club not only taught us the goodwill of giving to society but also the management of various events. \r\n     Fortunately I got a really good team to work with. All the members of the team were very hardworking and for that now all of us are celebrating the success of our first year. If I get a chance, I would love to work with the club ahead.');
 
 -- --------------------------------------------------------
 
@@ -325,10 +353,11 @@ INSERT INTO `postholders` (`id`, `name`, `dept`, `enroll`, `phone`, `post`, `ter
 --
 
 CREATE TABLE IF NOT EXISTS `testimonials` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` text NOT NULL,
   `message` text NOT NULL,
-  `post` text NOT NULL
+  `post` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
@@ -342,75 +371,6 @@ INSERT INTO `testimonials` (`id`, `author`, `message`, `post`) VALUES
 (4, 'Jigar Joshi', 'Get Active has been very beneficial for us because it has told us the diet which consists of the right amount of nutrition in all food groups. It has made us play some enjoyable Indian games such as Kho-Kho, Kabaddi etc. earlier I used to have a lot of high fat food but after this program have reduced its intake and started taking more of healthy food. I enjoyed these activities very much and learnt that we should not just sit around and laze. We should engage ourselves in some energetic activities instead. I also learnt that we should have a proper diet. The activity in which we made the food pyramid has been my favorite', 'BVM College Vidhyanagar'),
 (5, 'Jonathan Mast', 'Our firm has uses Divi as the base framework for over 40 client websites and we continue to use Divi on a regular basis due to the amazing flexibility that Divi provides our clients.\r\nAs a web design firm we can work with most any theme or design; we work with Divi because it saves us time and that translates into savings for our clients. Our clients love Divi because they have the ability to create amazing web page layouts using the Divi Page Builder without needing to understand the complexities of CSS, HTML or PHP.\r\nAll of this combined with Elegant Theme''s support and active user community make Divi and Elegant Themes a great choice for us and our clients.', 'No One at No one');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `currentpostholders`
---
-ALTER TABLE `currentpostholders`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `eventphotos`
---
-ALTER TABLE `eventphotos`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `membersmessage`
---
-ALTER TABLE `membersmessage`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `postholders`
---
-ALTER TABLE `postholders`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `testimonials`
---
-ALTER TABLE `testimonials`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `currentpostholders`
---
-ALTER TABLE `currentpostholders`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `eventphotos`
---
-ALTER TABLE `eventphotos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=435;
---
--- AUTO_INCREMENT for table `membersmessage`
---
-ALTER TABLE `membersmessage`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `postholders`
---
-ALTER TABLE `postholders`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `testimonials`
---
-ALTER TABLE `testimonials`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
