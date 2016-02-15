@@ -1,11 +1,9 @@
 angular.module("rotaract")
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 		$stateProvider
-
-
-
 		.state('president.login',{
-				url : '/login',
+
+				url : '',
 				templateUrl : 'president/view/login.html', 
 				controller : 'presidentLoginCtrl'
 					
@@ -18,7 +16,5 @@ angular.module("rotaract")
 				controller : 'welcomePresidentCtrl'
 					
 			})
-
-
 
 }]);

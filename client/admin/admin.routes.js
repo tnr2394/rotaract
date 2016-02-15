@@ -4,7 +4,7 @@ angular.module("rotaract")
 
 	
 		.state('admin.login',{
-				url : '/login',
+				url : '',
 				templateUrl : 'admin/view/login.html', 
 				controller : 'adminLoginCtrl'
 					

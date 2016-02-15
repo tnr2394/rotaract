@@ -29,4 +29,6 @@
 		
 
 	}
-echo json_encode($ara);
+	echo json_encode($ara);
+
+?>

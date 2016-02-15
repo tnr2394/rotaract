@@ -39,7 +39,7 @@ angular.module('rotaract').factory('rotaractInterceptor', ['$q', function($q) {
          if(rejection.status == 401)
          {
            alert("Inside responseError");
-           window.location="http://localhost/Angular/rotaract/client/#/";
+           window.location="http://localhost/Angular/rotaract/client/#/guest/";
          }
        
         console.log(rejection);

@@ -1,5 +1,6 @@
 <?php
 	
+
 	error_reporting(0);
 	$con = mysqli_connect('localhost','root','') or die(mysql_error());
 	$con->set_charset('utf8');
@@ -12,11 +13,11 @@
 	{
 		if($filename!="Login.php")
 		{
-			
-			
+
 			if($_SESSION["username"]==null && $_SESSION["username"]=="" && $_SESSION["password"]==null && $_SESSION["password"]=="")
-			{
-			header('HTTP/1.1 401 Unauthorized', true, 401);
+			{	
+				echo "ERROR IN SESSION";
+				header('HTTP/1.1 401 Unauthorized', true, 401);
 			}
 		}
 		
@@ -24,13 +25,14 @@
 
 	checkSession();
 
-	function get_new_event_id(){
-    $events=mysqli_query($con,"select * from events_NewName order by id desc");
+	function get_new_event_id()
+	{
+    	$events=mysqli_query($con,"select * from events_NewName order by id desc");
 
-    while($event=  mysqli_fetch_assoc($events))
-    {
-        return ($event['id']+1);
-    }
-}
+    	while($event=  mysqli_fetch_assoc($events))
+	    {
+	        return ($event['id']+1);
+	    }
+	}
 
-?>
+?>	

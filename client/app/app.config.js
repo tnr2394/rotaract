@@ -55,21 +55,24 @@ angular.module("rotaract")
 				url : '/president',
 				views : {
 					top : {templateUrl : 'president/view/menu.html',
-							controller : function($scope,$state,$localStorage){
-									$scope.logout = function(){
-									$localStorage.currentPostHolder='null';
+							controller : function($scope,$localStorage,$state){
+
+								$scope.logout = function(){
+
+  									$localStorage.currentPostHolder='null';
 									$state.go('guest.welcome');
-								}
-							},
+								}		
+							}
+						},
 					main : {
-						template : "<ui-view></ui-view>"}
+						template : "<ui-view></ui-view>"
+					}
 				}
-			}
-		});
+			});
 
 
 
-		// $urlRouterProvider.otherwise('/guest/');
+			$urlRouterProvider.otherwise('/guest/');
 	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
@@ -84,13 +87,13 @@ angular.module("rotaract")
 				}
 				else{
 					if(typeof($localStorage.currentPostHolder)=='undefined' || $localStorage.currentPostHolder=='null'){
-						console.log(typeof($localStorage.currentPostHolder));
+						//console.log(typeof($localStorage.currentPostHolder));
 						$state.go('guest.welcome');
 					}
 				}
 			}
 			else{
-				console.log("IT HAS TO BE LOGGED IN OR GUEST");
+				//console.log("IT HAS TO BE LOGGED IN OR GUEST");
 			}
     	});
   });
