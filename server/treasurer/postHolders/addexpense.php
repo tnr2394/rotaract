@@ -7,13 +7,13 @@ header("Cache-Control: *"); //HTTP 1.1
   $data = json_decode($data);
   
   $name = $data->name;
-  $group=$data->group;
+  $grouptype=$data->group;
   $amount=$data->amount;
   $type="out";
   $details=$data->details;
 
 
-  mysqli_query($con,"INSERT INTO `accountdetails`(`name`, `classN`, `amount`, `type`, `details`) VALUES('$name','$group','$amount','$type','$details')") or die(mysqli_error($con));
+  mysqli_query($con,"INSERT INTO `accountdetails`(`name`, `grouptype`, `amount`, `type`, `details`) VALUES('$name','$type','$amount','$type','$details')") or die(mysqli_error($con));
   echo true;
 
 

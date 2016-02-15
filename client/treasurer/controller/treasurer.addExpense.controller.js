@@ -4,7 +4,7 @@ angular.module('rotaract')
 			treasurerFactory.addExpense(x)
 				.then(function (response) {
 					alert("Expense Added.");
-					$state.go("treasurer.welcome"); 
+					//$state.go("treasurer.welcome"); 
 				},function (err) {
 					 console.log(err);
 				});
