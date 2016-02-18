@@ -1,0 +1,18 @@
+<h2 class = "page-header text-danger">Testimonials</h2>
+<div class = "row">
+	<div class = "col-md-10 col-md-offset-1">
+		<table class = "table  table-responsive table-bordered w3-striped">
+			<tr class = "bg-primary">
+				<th colspan='2'>Author</th>
+				<th colspan='3'>Message</th>
+			</tr>
+			<tr class="" ng-repeat = "x in testimonials">
+				<td>{{x.author}}</td>
+				<td> {{x.post}}</td>
+				<td>&nbsp; {{x.message   | cut:true:200:'...'}}</td>
+				<td><button class = "btn btn-info" ng-click="goTo(x)"><i class = "fa fa-gears"></i> Edit</button></td>
+				<td><button class = "btn btn-danger" ng-click = "deleteTestimonial(x.id)"><i class = "fa fa-trash"></i> Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>

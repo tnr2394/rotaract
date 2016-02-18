@@ -1,1 +1,21 @@
 <h2 class="page-header text-danger">Welcome {{presidentName}}</h2>
+<div class = "row">
+	<div class = "col-md-offset-1 col-md-4">
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.addTestimonial')">
+			<i class="fa fa-plus"></i> &nbsp;Add Testimonial
+		</button>
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.listTestimonials')">
+			<i class="fa fa-gear"></i> &nbsp; Edit Testimonials
+		</button>		
+	</div>
+
+	<div class = "col-md-offset-1 col-md-4">
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.editAboutClub')">
+			<i class="fa fa-plus"></i> &nbsp;Edit ABOUT ROTARACT
+		</button>
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.editContacts')">
+			<i class="fa fa-gears"></i> &nbsp;Edit Contacts
+		</button>
+	</div>
+
+</div>
