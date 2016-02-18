@@ -12,15 +12,7 @@ angular.module('rotaract')
 			$scope.event = response.data; 
 	    	
 
-			/*Dropzone.options.myDropzone = {
-			  init: function() {
-			    this.on("processingfile", function(file) {
-			      this.options.url = action;
-			    });
-			  }
-			};*/
-		/*	 $scope.diver ='<div action="'+action+'" class="dropzone" drop-zone call-back="myCallBackMethod(response)" data-max="5" auto-process="false" message="Drop file here or click to select" mimetypes=".doc,.docx,.pages,.pdf,.odt" id="file-dropzone"></div>';
-			$("#myDiv").html($scope.diver);*/
+		
 		},function (err) {
 			 alert("There is some error. Please try later.");
 			 console.log(err); 

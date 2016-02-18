@@ -5,7 +5,15 @@ angular.module("rotaract")
 			.state('treasurer',{
 				url : '/treasurer',
 				views : {
-					top : {templateUrl : 'treasurer/view/menu.html'},
+					top : {templateUrl : 'treasurer/view/menu.html',
+							controller : function($scope,$localStorage,$state){
+								$scope.logout = function(){
+
+  									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}		
+							}
+						},
 					main : {
 						template : "<ui-view></ui-view>"
 					}
@@ -24,58 +32,66 @@ angular.module("rotaract")
 			})
 
 
-			.state('adminLogin',{
+			.state('admin',{
 				url : '/admin',
 				views : {
-					'main' : {	templateUrl : 'admin/view/login.html', 
-								controller : 'adminLoginCtrl'
+					top : {templateUrl : 'admin/view/menu.html',
+							controller : function($scope,$state,$localStorage){
+								$scope.logout = function(){
+
+  									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}
 							}
+						},
+					main : {
+						template : "<ui-view></ui-view>"
+					}
 				}
 			})
 
 
-			.state('admin/welcome',{
-				url : '/admin/welcome',
-				views : {
-					'main' : {	templateUrl : 'admin/view/welcomeAdmin.html', 
-								controller : 'welcomeAdminCtrl'
-							}
-				}
-			})
-
-			.state('presidentLogin',{
+			.state('president',{
 				url : '/president',
 				views : {
-					'main' : {	templateUrl : 'president/view/login.html', 
-								controller : 'presidentLoginCtrl'
-							}
-				}
-			})
+					top : {templateUrl : 'president/view/menu.html',
+							controller : function($scope,$localStorage,$state){
 
+								$scope.logout = function(){
 
-			.state('president/welcome',{
-				url : '/president/welcome',
-				views : {
-					'main' : {	templateUrl : 'president/view/welcomePresident.html', 
-								controller : 'welcomePresidentCtrl'
+  									$localStorage.currentPostHolder='null';
+									$state.go('guest.welcome');
+								}		
 							}
+						},
+					main : {
+						template : "<ui-view></ui-view>"
+					}
 				}
 			});
 
 
 
-		$urlRouterProvider.otherwise('/guest/');
+			$urlRouterProvider.otherwise('/guest/');
 	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
 
+    	$rootScope.$on('$stateChangeSuccess',function(event, toState, fromState){
 
-    	$rootScope.$on('$stateChangeStart',function(event, toState, fromState){
-			if(toState.name.substr(0,9)=='treasurer'){
-				if(typeof($localStorage.currentPostHolder)=='undefined'){
-					window.location = "http://localhost/Angular/rotaract/client/";
+			if(toState.name.substr(0,9).localeCompare('treasurer')==0||toState.name.substr(0,9).localeCompare('president')==0||toState.name.substr(0,5).localeCompare('admin')==0)	{
+
+				if(toState.name.localeCompare("treasurer.login")==0 || toState.name.localeCompare("president.login")==0 || toState.name.localeCompare("admin.login")==0){
+				}
+				else{
+					if(typeof($localStorage.currentPostHolder)=='undefined' || $localStorage.currentPostHolder=='null'){
+						//console.log(typeof($localStorage.currentPostHolder));
+						$state.go('guest.welcome');
+					}
 				}
 			}
+			else{
+				//console.log("IT HAS TO BE LOGGED IN OR GUEST");
+			}
     	});
-
-	});
+  });

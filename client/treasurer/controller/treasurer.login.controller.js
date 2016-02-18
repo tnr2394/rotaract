@@ -4,9 +4,13 @@ angular.module('rotaract')
 		$scope.login = function(x){
 			treasurerFactory.doLogin(x)
 				.then(function (response) {
-					if(response.status){
-						$localStorage.treasurer = response.data;
+					if(response.data.status){
+						$localStorage.currentPostHolder = response.data;
 						$state.go('treasurer.welcome');
+					}
+					else
+					{
+						$scope.visible=true;
 					}
 				},function (err) {
 					console.log(err);

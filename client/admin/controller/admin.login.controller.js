@@ -7,8 +7,12 @@ angular.module('rotaract')
 			adminFactory.doLogin(x)
 				.then(function (response) {
 					if(response.status){
-						$localStorage.admin = response.data;
-						$state.go('admin/welcome');
+						$localStorage.currentPostHolder = response.data;
+						$state.go('admin.welcome');
+					}
+					else
+					{
+						$scope.visible=true;
 					}
 				},function (err) {
 					console.log(err);

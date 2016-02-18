@@ -18,7 +18,7 @@ angular.module('rotaract')
 		}
 		$scope.whatIsIt2 = function (x) {
 			var z = (x%2==0)?"fa myfa fa-quote-right fa-5x":"fa myfa fa-quote-left fa-5x";
-			console.log("z ="+ z);
+			//console.log("z ="+ z);
 			return z;
 		}
 

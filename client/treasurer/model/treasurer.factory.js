@@ -3,7 +3,7 @@ angular.module('rotaract')
 		var obj = {};
 		obj.doLogin = function(x){
 			var defer = $q.defer();
-			$http.get("http://localhost/Angular/rotaract/server/treasurer/treasurerLogin.php?username="+x.username+"&password="+x.password)
+			$http.get("http://localhost/Angular/rotaract/server/treasurer/Login.php?username="+x.username+"&password="+x.password)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -28,6 +28,17 @@ angular.module('rotaract')
 			var defer = $q.defer();
 			console.log(x);
 			$http.post("http://localhost/Angular/rotaract/server/treasurer/message/addMessageFromUser.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
+		obj.addExpense = function(x){
+			var defer = $q.defer();
+			console.log(x);
+			$http.post("http://localhost/Angular/rotaract/server/treasurer/accounts/addExpense.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {

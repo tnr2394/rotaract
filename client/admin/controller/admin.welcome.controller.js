@@ -1,4 +1,4 @@
 angular.module('rotaract')
 	.controller('welcomeAdminCtrl',['$scope','$state','$localStorage',function($scope,$state,$localStorage) {
-		$scope.adminName = $localStorage.admin.name;
+		$scope.adminName = $localStorage.currentPostHolder.name;
 	}]);
