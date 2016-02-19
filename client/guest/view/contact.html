@@ -1,0 +1,27 @@
+<style>
+	.form-control{
+		margin-bottom: 10px;
+	}
+</style>
+<h2 class = "page-header text-danger">Contact Us.</h2>
+
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 well">
+
+		<form ng-submit = "contact(x)" ng-init="x = {}" class="well-lg">
+			<div class="alert bg-primary" style="font-size:18px; font-weight:bold;">Ask to Rotaract Club of V.V.P. Engineering College.</div>
+			<input type="text" class = "form-control" required ng-model="x['name']" placeholder="Name" required>
+			<input type="email" class = "form-control" required ng-model="x['email']" placeholder="Email" required>
+			<input type="tel" class = "form-control" required ng-model="x['phone']" placeholder="Phone Number" pattern="[0-9]{10}" required>
+			<textarea required ng-model="x['message']" class="form-control" style="height:30%;"></textarea>
+
+			<button class="btn btn-primary btn-block">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+
+
+

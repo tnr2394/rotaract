@@ -39,5 +39,11 @@ angular.module("rotaract")
 			    }
 					
 			})
+		.state('president.editAbout',{
+				url : '/edit',
+				templateUrl : 'president/view/editAbout.html', 
+				controller : 'editAboutCtrl'
+					
+			})
 
 }]);

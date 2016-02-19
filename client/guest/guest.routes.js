@@ -38,4 +38,10 @@ angular.module("rotaract")
 				controller : 'aboutCtrl'
 					
 			})
+			.state('guest.contact',{
+				url : '/contact',
+				templateUrl : 'guest/view/contact.html', 
+				controller : 'contactCtrl'
+					
+			})
 		}]);

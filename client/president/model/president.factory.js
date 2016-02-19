@@ -73,6 +73,55 @@ angular.module('rotaract')
 				return defer.promise;
 		}
 
+		obj.saveAbout = function(x){
+			var defer = $q.defer();
+			$http.post("http://localhost/Angular/rotaract/server/president/saveAbout.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+
+
+		obj.getAbout = function(x){
+			var defer = $q.defer();
+			$http.get("http://localhost/Angular/rotaract/server/president/getAbout.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+		obj.saveContactUs = function(x){
+			var defer = $q.defer();
+			$http.post("http://localhost/Angular/rotaract/server/president/saveContactUs.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+
+
+		obj.getContactUs = function(x){
+			var defer = $q.defer();
+			$http.get("http://localhost/Angular/rotaract/server/president/getContactUs.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+
 
 		return obj;		
 
