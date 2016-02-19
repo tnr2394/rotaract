@@ -17,4 +17,33 @@ angular.module("rotaract")
 					
 			})
 
+		.state('president.addTestimonial',{
+				url : '/addTestimonial',
+				templateUrl : 'president/view/addTestimonial.html', 
+				controller : 'addTestimonialCtrl'
+					
+			})
+		.state('president.listTestimonials',{
+				url : '/listTestimonials',
+				templateUrl : 'president/view/listTestimonials.html', 
+				controller : 'listTestimonialsCtrl'
+					
+			})
+		.state('president.editTestimonial',{
+	
+				url : '/editTestimonial/:id',
+				templateUrl : 'president/view/editTestimonial.html', 
+				controller : 'editTestimonialCtrl',
+				params : {
+			        id : '0'
+			    }
+					
+			})
+		.state('president.editAbout',{
+				url : '/edit',
+				templateUrl : 'president/view/editAbout.html', 
+				controller : 'editAboutCtrl'
+					
+			})
+
 }]);

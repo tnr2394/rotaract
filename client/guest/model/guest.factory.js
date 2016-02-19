@@ -82,7 +82,30 @@ angular.module('rotaract')
 				});
 			return defer.promise;
 		}
+	
+		obj.contact = function(x){
+			var defer = $q.defer();
+			console.log(x);
+			$http.post("http://localhost/Angular/rotaract/server/guest/addContact.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
 
+		obj.getAbout = function(x){
+			var defer = $q.defer();
+			$http.get("http://localhost/Angular/rotaract/server/president/getAbout.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
 
 		return obj;
 	}])

@@ -18,24 +18,10 @@
 			<input type="number" class = "form-control custom-form" placeholder = "Amount" ng-model = "x['amount']" required>
 			<input type="text" class = "form-control custom-form" placeholder = "Details" ng-model = "x['details']">
 			
-			<div ng-if="dropvisible" ng-init="dropvisible=false">
-				<div action="{{action}}" 
-				class="dropzone" 
-				drop-zone 
-				call-back="myCallBackMethod(response)" 
-				data-max="5" 
-				auto-process="false" 
-				message="Drop file here or click to select" 
-				mimetypes=".doc,.docx,.pages,.pdf,.odt" 
-				id="fileDropzone">
-					
-				</div>
-			</div>
+	
 			
 			<button class = "btn btn-success custom-form pull-right" type = "submit" ng-submit="addExpense(x)">Add</button>
-			<div ng-if="dropvisible">
-				<button class = "btn btn-success custom-form pull-right" type = "submit" ng-submit="navigate()">Done</button>
-			</div>
+
 		</form>
 	</div>
 </div>

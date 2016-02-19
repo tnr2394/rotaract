@@ -15,6 +15,7 @@ angular.module('rotaract')
 		}
 
 		$scope.showModal = function(x){
+			
 			$scope.modalContent = $scope.postHolders[x];
 			guestFactory.getMessages($scope.postHolders[x].id,'postholders')
 				.then(function (response) {
