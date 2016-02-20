@@ -201,3 +201,14 @@ font-family: "Lucida Console", Monaco, monospace;
 footer{
   margin-bottom: -10px;
 }
+.pre{
+    white-space: pre-wrap;
+  }
+.hover:hover{
+  background-color: rgba(150,150,150,0.05);
+  border-bottom-right-radius: 10px;
+  box-shadow: 1mm 1mm 3px #aaa;
+}
+.hover:hover > h2{
+  text-shadow:0 0 5px white;
+}
