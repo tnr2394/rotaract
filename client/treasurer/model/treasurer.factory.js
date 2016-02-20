@@ -5,8 +5,12 @@ angular.module('rotaract')
 			var defer = $q.defer();
 			$http.get("http://localhost/Angular/rotaract/server/treasurer/Login.php?username="+x.username+"&password="+x.password)
 				.then(function(success){
+					alert("Inside treasurerFactory dologin succes");
+					alert(success.data);
 					defer.resolve(success);
-				},function (err) {
+
+				},function (err){
+			
 					  defer.reject(err);
 				});
 				return defer.promise;
