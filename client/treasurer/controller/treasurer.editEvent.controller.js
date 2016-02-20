@@ -18,6 +18,7 @@ angular.module('rotaract')
 
 		
 		$scope.updateEvent=function () {
+			$scope.event.description=$scope.event.description.replace(/'|\\'/g, "\\'");
 			treasurerFactory.editEvent($scope.event)
 				.then(function(response){
 					$state.go('treasurer.editEventPhotos',{	'id': $scope.id  })

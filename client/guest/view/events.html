@@ -1,11 +1,11 @@
 <h2 class="page-header text-danger">Events and Activities of Rotaract</h2>
 <div class = "row">
-	<div class = "col-md-12">
+	<div class = "col-md-10 col-md-offset-1">
 		<div ng-repeat = "x in events track by $index">
-			<blockquote>
+			<blockquote class="hover">
 			<h3 class = "text-primary">{{x.name}}</h3>
 			<p style="text-indent:30px;">{{x.description  | cut:true:300:'...'}}
-				<b class = "text-success"><a class = "" ng-click="goTo(x.id)">Read more about {{x.name}}.</a></b>
+				<b class = ""><a class = "btn btn-link" ng-click="goTo(x.id)">Read more about {{x.name}}.</a></b>
 			</p>
 			<b class = "text-primary text-center">This event was conducted on {{x.date}} at Rajkot.</b>
 			</blockquote>
