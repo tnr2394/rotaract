@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Cache-Control: *"); //HTTP 1.1
-  error_reporting(0);
+  //error_reporting(0);
   include("config.php");    
   $data = file_get_contents("php://input");
   $data = json_decode($data);

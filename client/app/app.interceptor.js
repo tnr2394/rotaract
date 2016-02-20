@@ -18,7 +18,7 @@ angular.module('rotaract').factory('rotaractInterceptor', ['$q', function($q) {
         // Contains the data about the error on the request.
         alert("Inside requestFailure");
         console.log(rejection);
-
+        
       // Return the promise rejection.
       return $q.reject(rejection);
       },
