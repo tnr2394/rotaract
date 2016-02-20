@@ -202,7 +202,7 @@ footer{
   margin-bottom: -10px;
 }
 .pre{
-    white-space: pre-wrap;
+    white-space: pre-line;
   }
 .hover:hover{
   background-color: rgba(150,150,150,0.05);
@@ -211,4 +211,9 @@ footer{
 }
 .hover:hover > h2{
   text-shadow:0 0 5px white;
+}
+
+.newFont{
+  font-family: sans-serif;
+  color: #444;
 }
