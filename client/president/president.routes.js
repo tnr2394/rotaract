@@ -3,7 +3,7 @@ angular.module("rotaract")
 		$stateProvider
 		.state('president.login',{
 
-				url : '',
+				url : '/login',
 				templateUrl : 'president/view/login.html', 
 				controller : 'presidentLoginCtrl'
 					
