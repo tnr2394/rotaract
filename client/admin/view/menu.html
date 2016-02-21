@@ -1,9 +1,9 @@
-<ul class = "nav navbar-nav nav-tabs" style="width:100%;">
+<ul class = "nav navbar-nav nav-tabs" style="width:100%;" ng-show="!$state.is('admin.login')">
 	<li> <a ui-sref = "guest.welcome"><i class = "fa fa-home"></i> Home</a></li>
 	<li> <a ui-sref = "guest.testimonials"><i class = "fa fa-quote-left"></i> Testimonials</a></li>
 	<li> <a ui-sref = "guest.events"><i class = "glyphicon glyphicon-tasks"></i> Events and Activities</a></li>
 	<li> <a ui-sref = "guest.postHolders"><i class = "fa fa-bookmark"></i> Post Holders</a></li>
 	<li> <a ui-sref = "guest.about"><i class = "fa fa-university"></i> About</a></li>
 	<li> <a ui-sref = "guest.contacts"><i class = "fa fa-phone-square"></i> Contact Us</a></li>
+<button class = "btn btn-danger pull-right" ng-click="logout()"><i class = "glyphicon glyphicon-log-out"></i> Logout</button>
 </ul>
-<button class = "btn btn-danger pull-right" ng-click="logout()">Logout</button>

@@ -1,6 +1,6 @@
 <?php
-	include("config.php");
-	// error_reporting(1);
+	require 'config.php';
+	error_reporting(-1);
 	$result = mysqli_query($con,"select * from `testimonials`") or die(mysql_error());
 	$ara = array();
 	while($x = mysqli_fetch_assoc($result))	
