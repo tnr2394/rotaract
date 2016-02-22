@@ -39,6 +39,18 @@ angular.module('rotaract')
 				});
 				return defer.promise;
 		}
+		obj.getAccount = function(){
+			var defer = $q.defer();
+
+			$http.get("http://localhost/Angular/rotaract/server/treasurer/accounts/getaccountdetails.php")
+				.then(function(success){
+					defer.resolve(success);
+					alert(success.data);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
 		obj.addExpense = function(x){
 			var defer = $q.defer();
 			console.log(x);

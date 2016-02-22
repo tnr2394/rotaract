@@ -23,7 +23,7 @@ function sumlog(){
 		$total=$totalin-$totalout;
 	}
 	$myfile = fopen("logsummary.txt", "w")or die("Unable to open file!");
-  	fwrite($myfile,"{\"totalin\":\"".$totalin."\",\"totalout\":\"".$totalout."\",\"total\":\"".$total."\"}".PHP_EOL);
+  	fwrite($myfile,"{\"totalin\":\"".$totalin."\",\"totalout\":\"".$totalout."\",\"total\":\"".$total."\"}");
   	fclose($myfile);
   }
 

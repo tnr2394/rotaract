@@ -35,6 +35,7 @@ angular.module('rotaract')
 				});
 			return defer.promise;
 		}
+		
 		obj.getEvent = function(x){
 			var defer = $q.defer();
 

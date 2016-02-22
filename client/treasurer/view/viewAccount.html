@@ -1,0 +1,35 @@
+<h1 class = "page-header text-danger">Treasurer Login</h1>
+
+<div class = "row">
+	<div class = "col-md-12">
+		<table class="table-striped table table-responsive table-hover">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Group</th>
+				<th>Amount</th>
+				<th>Type</th>
+				<th>Details</th>
+				<th>Date & Time</th>
+
+
+			</tr>
+			<tr ng-repeat="x in account">
+				<td ng-repeat="y in x">{{y}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+		<div class="well text-center" >
+			   Total Income:{{totalin}}<br>
+			<u>Total Outgoing:{{totalout}}</u><br>
+			<strong>Total:</strong>{{total}}
+		</div>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>	
