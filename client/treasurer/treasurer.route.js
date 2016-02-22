@@ -5,7 +5,6 @@ angular.module("rotaract")
 				url : '/addEvent',
 				templateUrl : 'treasurer/view/addEvent.html', 
 				controller : 'addEventCtrl'
-					
 			})
 			.state('treasurer.addEventPhoto',{
 				url : '/addEventPhoto/:id',
@@ -44,6 +43,17 @@ angular.module("rotaract")
 				templateUrl : 'treasurer/view/addExpense.html', 
 				controller : 'addExpense'							
 			})
+			.state('treasurer.addIncome',{
+				url : '/addIncome',
+				templateUrl : 'treasurer/view/addIncome.html', 
+				controller : 'addIncome'							
+			})
+			.state('treasurer.viewAccount',{
+				url : '/viewAccount',
+				templateUrl : 'treasurer/view/viewAccount.html', 
+				controller : 'viewAccountCtrl'							
+			})
+
 
 			.state('treasurer.welcome',{
 				url : '/welcome',
