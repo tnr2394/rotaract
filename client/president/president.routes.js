@@ -14,9 +14,14 @@ angular.module("rotaract")
 				url : '/welcome',
 				templateUrl : 'president/view/welcomePresident.html', 
 				controller : 'welcomePresidentCtrl'
-					
+			                               		
 			})
-
+		.state('president.compareAccounts',{
+				url : '/compareAccounts',
+				templateUrl : 'president/view/compareAccounts.html', 
+				controller : 'compareAccountsCtrl'
+			                               		
+			})
 		.state('president.addTestimonial',{
 				url : '/addTestimonial',
 				templateUrl : 'president/view/addTestimonial.html', 
