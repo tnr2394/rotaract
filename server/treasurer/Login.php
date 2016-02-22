@@ -4,8 +4,8 @@
 	$con = mysqli_connect('localhost','root','') or die(mysql_error());
 
 	//error_reporting(0);
-	error_reporting(-1);
-	ini_set('display_errors', 'On');
+	// error_reporting(-1);
+	// ini_set('display_errors', 'On');
 
 	// $con = mysqli_connect('localhost','root','') or die(mysql_error());
 	$con->set_charset('utf8');

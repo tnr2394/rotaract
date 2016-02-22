@@ -44,6 +44,11 @@ angular.module("rotaract")
 				templateUrl : 'treasurer/view/addExpense.html', 
 				controller : 'addExpense'							
 			})
+			.state('treasurer.addIncome',{
+				url : '/addIncome',
+				templateUrl : 'treasurer/view/addIncome.html', 
+				controller : 'addIncome'							
+			})
 
 			.state('treasurer.welcome',{
 				url : '/welcome',
