@@ -5,16 +5,12 @@ angular.module('rotaract')
 			treasurerFactory.doLogin(x)
 				.then(function (response) {
 
-					alert(response.data.status);
-
 					if(response.data.status){
 						$localStorage.currentPostHolder = response.data;
 						$state.go('treasurer.welcome');
-						alert("login Successful");
 					}
 					else
 					{
-						alert("Login Unsuccessfull");
 						$scope.visible=true;
 					}
 				},function (err) {

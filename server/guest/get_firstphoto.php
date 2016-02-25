@@ -1,7 +1,6 @@
 <?php
 	include("config.php");
-	header("Access-Control-Allow-Origin: *");
-header("Cache-Control: *"); //HTTP 1.1
+	
 
 	getImages($_GET['id'],$con);
 	function getImages($id,$con){

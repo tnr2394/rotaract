@@ -22,7 +22,10 @@
 		</div>
 	</div>
 </div>
-<h2 class = "text-primary page-header" ng-click="showPhotos()"><i class="fa {{myIcon}}"></i> Event Photos</h2>
+<button style="font-size:25px; padding:10px; font-family:'Comic Sans MS', cursive, sans-serif" class="btn btn-block btn-primary" ng-click="showPhotos()">
+	<i class="fa fa-camera-retro"></i> Click me for Photos!
+</button>
+<br><br>
 <div class="row" ng-show="show">
 	<div class = "col-md-3 postHolderCard img-rounded" ng-repeat="y in images track by $index">
 		<div class="w3-card-2">	
