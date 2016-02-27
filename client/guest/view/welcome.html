@@ -2,16 +2,26 @@
 
 
  	<div class="row">
- 		<div class = "col-md-3">
+ 		<div class = "col-md-3 col-xs-12 col-sm-12 img-rounded ">
  			<h3 class = "text-primary">What is Rotaract?</h3>
  			<div class = "lightColor text-justify">
  				Every Rotaractor were really happy and got many lessons of life. Elders are treasure of love and experience, all they wish is love and small part of our time. Thank you Mukesh Doshi for letting us visit the Old age home and congratulations to every rotaractor who were there.
  			</div>
  		</div>
-		<div class = "col-md-9">
+		<div class = "col-md-9 col-xs-12 col-sm-12">
 			<h3 class = "text-primary">Our Achievements</h3>	
-			<div class="lightColor">
-				Rotaractors went to an old age home ``Smt. R. D. Gardi ``Dikra nu Ghar – Vrudhaashram``. The owner was Mukesh Doshi and he warmly welcomed all of us. He guided us through the old age home. First of all we were taken to the divine temple of lord shiva, then we were taken to the temple of `Bharat Mata` which was the center of attraction for all of us. We observed the dining area where all elders sit together for meals, we saw their store room where they keep their groceries. There was also mini-theater and an auditorium under construction followed by a beautiful garden where elders sit and enjoy lovely sunrise and sunset. After then, he took us to elders
+			<div class="">
+				<div class = "col-md-4 col-sm-6 col-xs-12 img-rounded margin-bottom-6" ng-repeat="z in achievements">
+					<div class="w3-card-2">	
+						<div class ="img-holder w3-light-grey">
+							<img ng-src="{{z.path}}" class = "img-responsive custom-img margin-auto">
+						</div>
+						<div class = "w3-container text-center bg-primary">
+							{{z.name}}
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -20,33 +30,33 @@
 <div class ="clear-fix"><br><hr><br></div>
 
 
-<div class = "row">
-	<div class = "col-md-12">
+<div class = "row" style="padding-right:20px;">
+	<div class = "col-md-12 col-xs-12 col-sm-12">
 		<h3 class="text-primary">Messages from Post holders</h3>
 	</div>
 	<br>
-	<div class="col-md-3 col-sm-3 col-xs-3 text-center w3-light-grey img-rounded padding-5" style="margin-left:30px;">
+	<div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-1 text-center w3-light-grey img-rounded padding-5" style="">
 		<h3 class = "w3-container text-warning text-left">President</h3><div class="img-holder"><img src = "assets/postHolders/dharamjeetchauhan.jpg" class = "img-responsive w3-image custom-img img-rounded img-thumbnail"></div><br>		
 		<div class="lightFont">Hello People! This is my message.Item one item two item three item four item five item six item seven item eight item nine item ten.{{message.president}} <br><br></div>
 	</div>
-	<div class = "col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-md-offset-1 text-center w3-light-grey img-rounded padding-5 ">
+	<div class = "col-md-3 col-sm-6 col-xs-12  col-md-offset-1 text-center w3-light-grey img-rounded padding-5 ">
 		<h3 class = "w3-container text-warning text-left">Secretary</h3><div class="img-holder"><img src = "assets/postHolders/mohitshah.jpg" class = "img-responsive w3-image custom-img img-rounded img-thumbnail"></div><br>		
 		<div class="lightFont">Hello People! This is my message.Item one item two item three item four item five item six item seven item eight item nine item ten.{{message.secretary}}<br><br> </div>
 	</div>
-	<div class = "col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 text-center col-md-offset-1 w3-light-grey img-rounded padding-5 ">
+	<div class = "col-md-3 col-sm-6 col-xs-12  text-center col-md-offset-1 w3-light-grey img-rounded padding-5 ">
 		<h3 class = "w3-container text-warning text-left">Governor</h3><div class="img-holder"><img src = "assets/postHolders/krunalsuva.jpg" class = "img-responsive w3-image custom-img img-rounded img-thumbnail"></div><br>		
 		<div class="lightFont">Hello People! This is my message.Item one item two item three item four item five item six item seven item eight item nine item ten.{{message.governor}}<br><br> </div>
 	</div>
 </div>
 <div class = "clearfix"><br><hr><br></div>
 
-<div class = "row row-eq-height w3-light-grey">
-	<div class = "col-md-8">
+<div class = "row w3-light-grey">
+	<div class = "col-md-8 col-xs-12">
 		<h2 class = "text-primary">Upcoming Events</h3>
-			<div class = "pre-scrollable img-rounded w3-card-4" style="padding:0px; background-color:rgba(0,0,0,0.0)">
+			<div class = "pre-scrollable img-rounded w3-card-4" style="padding:0px;">
 				<div ng-repeat = "y in events" class="well-sm w3-white">
-					<h4 style="" class="text-info lead"> <i class="fa fa-hand-o-right text-info"></i> {{y.name}}</h4>
-					<div class="text-justify lightColor" style="margin-left:30px;font-family:arial">
+					<h5 style="" class="text-info"> <i class="fa fa-hand-o-right"></i>&nbsp; {{y.name}}</h5>
+					<div class="text-justify" style="margin-left:30px; font-size:100%">
 						{{y.description | cut:true:200:'.'}}
 					</div>
 					<hr>
@@ -54,7 +64,7 @@
 			</div>
 			<br><br>
 	</div>
-	<div class = "col-md-4 w3-container ">
+	<div class = "col-md-4 col-xs-12">
 		<h2 class="text-primary"> Recent Events</h3>
 			<table class = "table table-hover table-responsive w3-white img-rounded ">
 				<tr class = "" ng-repeat = "x in events">

@@ -5,7 +5,7 @@ angular.module('rotaract')
 		obj.getPostHolders = function(){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_postholders.php")
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_postholders.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -16,7 +16,7 @@ angular.module('rotaract')
 		obj.getTestimonials = function(){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_testimonials.php")
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_testimonials.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -27,7 +27,18 @@ angular.module('rotaract')
 		obj.getEvents = function(){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_events.php")
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_events.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
+		obj.getAchievements = function(){
+			var defer = $q.defer();
+
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_achievements.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -39,7 +50,7 @@ angular.module('rotaract')
 		obj.getEvent = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_event.php?id="+x)
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_event.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -52,7 +63,7 @@ angular.module('rotaract')
 /*			if(typeof for == "undefined"){
 				alert("No For specified.");
 			}*/
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_messages.php?id="+x+"&for="+y)
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_messages.php?id="+x+"&for="+y)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -63,7 +74,7 @@ angular.module('rotaract')
 		obj.getFirstPhoto = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_firstphoto.php?id="+x)
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_firstphoto.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -75,7 +86,7 @@ angular.module('rotaract')
 		obj.getPhotos = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://132.140.160.119/Angular/rotaract/server/guest/get_photos.php?id="+x)
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_photos.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -87,7 +98,7 @@ angular.module('rotaract')
 		obj.contact = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.post("http://132.140.160.119/Angular/rotaract/server/guest/addContact.php",x)
+			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/guest/addContact.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -98,7 +109,7 @@ angular.module('rotaract')
 
 		obj.getAbout = function(x){
 			var defer = $q.defer();
-			$http.get("http://132.140.160.119/Angular/rotaract/server/president/getAbout.php")
+			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/president/getAbout.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {

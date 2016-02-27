@@ -10,6 +10,15 @@ angular.module('rotaract')
 				alert("Sorry, Events Couldn't be loaded.");
 				console.log(err);
 			});
+			
+			guestFactory.getAchievements()
+			.then(function(response){
+				$scope.achievements = response.data;
+			},function(err){
+				alert("Sorry, Events Couldn't be loaded.");
+				console.log(err);
+			});
+
 		}
 		$scope.showTooltip = function(x){
 			guestFactory.getPhotos(x)

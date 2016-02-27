@@ -168,11 +168,14 @@ font-family: "Lucida Console", Monaco, monospace;
 	margin-top: 10px;
 }
 .img-holder{
+  position: relative;
 	height: 200px;
 	width: 100%;
 	overflow: hidden;
 }
+
 .custom-img{
+  overflow: hidden;
 	max-width: 100%;
 	max-height: 100%;
 	width:auto;
@@ -187,31 +190,25 @@ font-family: "Lucida Console", Monaco, monospace;
 	font-family: monospace;
 }
 
-.affix {
-      top: 0;
-      width: 100%;
-  }
-
-.affix + .container-fluid {
-	padding-top: 70px;
-}
 .no-bottom-margin{
 	margin-bottom: 0px;
 }
 footer{
-
   margin-top: 100px;
   position: relative;
   bottom: 0px;
 }
+
 .pre{
     white-space: pre-line;
-  }
+}
+
 .hover:hover{
   background-color: rgba(150,150,150,0.05);
   border-bottom-right-radius: 10px;
   box-shadow: 1mm 1mm 3px #aaa;
 }
+
 .hover:hover > h2{
   text-shadow:0 0 5px white;
 }
@@ -220,6 +217,7 @@ footer{
   font-family: sans-serif;
   color: #444;
 }
+
 .lightColor{
   color: #444;
 }
@@ -230,6 +228,7 @@ footer{
   animation-duration: 3s;
   animation-iteration-count:1;
 }
+
 @keyframes down-one {
     0%  {
         top : 0%;
@@ -248,20 +247,32 @@ footer{
     }
 }
 
-/*
-.box .overlay
-{
-    display:none;
-}
-
-.box:hover .overlay
-{
- display:block;   
-}​*/
-
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+}
+
+img.push-bottom{
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.hide-overflow{
+  overflow: hidden;
+}
+
+.arial-font {
+  font-family: arial;
+}
+
+.comic-font{
+  font-family: cursive;
+}
+.margin-bottom-6{
+  margin-bottom: 25px;
 }
