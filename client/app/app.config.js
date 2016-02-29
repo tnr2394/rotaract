@@ -1,5 +1,7 @@
 angular.module("rotaract")
-	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
+	.config(['$urlRouterProvider','$stateProvider','cfpLoadingBarProvider',function($urlRouterProvider,$stateProvider,cfpLoadingBarProvider){
+	    cfpLoadingBarProvider.latencyThreshold = 500;
+	    console.log(cfpLoadingBarProvider.latencyThreshold);
 		$stateProvider
 
 			.state('treasurer',{

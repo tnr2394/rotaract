@@ -1,6 +1,4 @@
-/* W3.CSS 1.9 by J.E.Refsnes. Do not remove this line. */
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
@@ -15,8 +13,11 @@ dfn{font-style:italic}
 mark{background:#ff0;color:#000}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-sup{top:-0.5em} sub{bottom:-0.25em}
-img{border:0} svg:not(:root){overflow:hidden} figure{margin:1em 40px}
+sup{top:-0.5em}
+sub{bottom:-0.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:1em 40px}
 hr{-moz-box-sizing:content-box;box-sizing:content-box}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
 button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
@@ -32,7 +33,6 @@ fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}
 legend{border:0;padding:0}
 pre,textarea{overflow:auto}
 optgroup{font-weight:bold}
-/* End extract from normalize.css */
 html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}
 h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
@@ -88,7 +88,7 @@ img.w3-image,.w3-image img{max-width:100%;height:auto}
 .w3-sidenav a{padding:4px 2px 4px 16px}
 .w3-sidenav a:hover,.w3-sidenav a:focus{background-color:#ccc}
 .w3-sidenav a,.w3-dropnav a{display:block;transition:.3s}
-.w3-dropnav {background-color:#fff}
+.w3-dropnav{background-color:#fff}
 .w3-dropnav a:hover{text-decoration:underline !important}
 .w3-tab div{display:none}
 .w3-tab div:target{display:block}
@@ -112,7 +112,7 @@ img.w3-image,.w3-image img{max-width:100%;height:auto}
 .w3-dropdown-content a{padding:6px 16px;display:block}
 .w3-dropdown-content a:hover{background-color:#ccc}
 input[type=checkbox].w3-check,input[type=radio].w3-radio{width:24px;height:24px;position:relative;top:6px}
-input[type=checkbox].w3-check:checked+.w3-validate,input[type=radio].w3-radio:checked+.w3-validate{color:#009688} 
+input[type=checkbox].w3-check:checked+.w3-validate,input[type=radio].w3-radio:checked+.w3-validate{color:#009688}
 input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:disabled+.w3-validate{color:#aaa}
 .w3-responsive{overflow-x:auto}
 .w3-container:after,.w3-row:after,.w3-row-padding:after,.w3-topnav:after,.w3-clear:after,.w3-btn-group:before,.w3-btn-group:after{content:"";display:table;clear:both}
@@ -129,8 +129,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-col.s10{width:83.33333%}
 .w3-col.s11{width:91.66666%}
 .w3-col.s12,.w3-half,.w3-third,.w3-twothird,.w3-quarter{width:99.99999%}
-@media only screen and (min-width:601px){
-.w3-col.m1{width:8.33333%}
+@media only screen and (min-width:601px){.w3-col.m1{width:8.33333%}
 .w3-col.m2{width:16.66666%}
 .w3-col.m3,.w3-quarter{width:24.99999%}
 .w3-col.m4,.w3-third{width:33.33333%}
@@ -142,8 +141,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-col.m10{width:83.33333%}
 .w3-col.m11{width:91.66666%}
 .w3-col.m12{width:99.99999%}}
-@media only screen and (min-width:993px){
-.w3-col.l1{width:8.33333%}
+@media only screen and (min-width:993px){.w3-col.l1{width:8.33333%}
 .w3-col.l2{width:16.66666%}
 .w3-col.l3,.w3-quarter{width:24.99999%}
 .w3-col.l4,.w3-third{width:33.33333%}
@@ -160,8 +158,8 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 @media (max-width:601px){.w3-modal-content{margin:50px 10px 10px 10px;width:auto !important}}
 @media (max-width:768px){.w3-modal-content{width:500px}}
 @media (min-width:992px){.w3-modal-content{width:900px}}
-@media screen and (max-width:601px){.w3-topnav a{display:block}}	
-@media screen and (max-width:601px){.w3-topnav .w3-dropdown-hover .w3-dropdown-content{position:relative}}	
+@media screen and (max-width:601px){.w3-topnav a{display:block}}
+@media screen and (max-width:601px){.w3-topnav .w3-dropdown-hover .w3-dropdown-content{position:relative}}
 @media screen and (max-width:601px){.w3-topnav{text-align:center}}
 @media (max-width:601px){.w3-hide-small{display:none !important}}
 @media (max-width:991px) and (min-width:601px){.w3-hide-medium{display:none !important}}
@@ -221,11 +219,9 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-padding-left{padding-left:16px !important}.w3-padding-right{padding-right:16px !important}
 .w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
 .w3-spin{animation:w3-spin 2s infinite linear;-webkit-animation:w3-spin 2s infinite linear}
-@-webkit-keyframes w3-spin{
-0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+@-webkit-keyframes w3-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
 100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
-@keyframes w3-spin{
-0%{-webkit-transform:rotate(0deg);transform: rotate(0deg)}
+@keyframes w3-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
 100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 .w3-container{padding:0.01em 16px}
 .w3-example{background-color:#f1f1f1;padding:0.01em 16px}
@@ -239,35 +235,36 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-card-12{box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19) !important}
 .w3-card-16{box-shadow:0 16px 24px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21) !important}
 .w3-card-24{box-shadow:0 24px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22) !important}
-.w3-animate-opacity{
--webkit-animation-name:opac;-webkit-animation-duration:4s;animation-name:opac;animation-duration:4s}
-@-webkit-keyframes opac{from{opacity:0} to{opacity:1}}
-@keyframes opac{from{opacity:0} to{opacity:1}}
-/* TOP */
-.w3-animate-top{
-position:relative;-webkit-animation-name:animatetop;-webkit-animation-duration:0.4s;animation-name:animatetop;animation-duration:0.4s}
-@-webkit-keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
-@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
-/* LEFT */
-.w3-animate-left{
-position:relative;-webkit-animation-name:animateleft;-webkit-animation-duration:0.4s;animation-name:animateleft;animation-duration:0.4s}
-@-webkit-keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
-@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
-/* RIGHT */
-.w3-animate-right{
-position:relative;-webkit-animation-name:animateright;-webkit-animation-duration:0.4s;animation-name:animateright;animation-duration:0.4s}
-@-webkit-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
-@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
-/* BOTTOM */
-.w3-animate-bottom{
-position:relative;-webkit-animation-name:animatebottom;-webkit-animation-duration:0.4s;animation-name:animatebottom;animation-duration:0.4s}
-@-webkit-keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0px;opacity:1}}
-@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
-/* ZOOM */
-.w3-animate-zoom {-webkit-animation-name:zoom;-webkit-animation-duration:0.6s;animation-name:animatezoom;animation-duration:0.6s}
-@-webkit-keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
-@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
-/* COLORS */
+.w3-animate-opacity{-webkit-animation-name:opac;-webkit-animation-duration:4s;animation-name:opac;animation-duration:4s}
+@-webkit-keyframes opac{from{opacity:0}
+to{opacity:1}}
+@keyframes opac{from{opacity:0}
+to{opacity:1}}
+.w3-animate-top{position:relative;-webkit-animation-name:animatetop;-webkit-animation-duration:0.4s;animation-name:animatetop;animation-duration:0.4s}
+@-webkit-keyframes animatetop{from{top:-300px;opacity:0}
+to{top:0;opacity:1}}
+@keyframes animatetop{from{top:-300px;opacity:0}
+to{top:0;opacity:1}}
+.w3-animate-left{position:relative;-webkit-animation-name:animateleft;-webkit-animation-duration:0.4s;animation-name:animateleft;animation-duration:0.4s}
+@-webkit-keyframes animateleft{from{left:-300px;opacity:0}
+to{left:0;opacity:1}}
+@keyframes animateleft{from{left:-300px;opacity:0}
+to{left:0;opacity:1}}
+.w3-animate-right{position:relative;-webkit-animation-name:animateright;-webkit-animation-duration:0.4s;animation-name:animateright;animation-duration:0.4s}
+@-webkit-keyframes animateright{from{right:-300px;opacity:0}
+to{right:0;opacity:1}}
+@keyframes animateright{from{right:-300px;opacity:0}
+to{right:0;opacity:1}}
+.w3-animate-bottom{position:relative;-webkit-animation-name:animatebottom;-webkit-animation-duration:0.4s;animation-name:animatebottom;animation-duration:0.4s}
+@-webkit-keyframes animatebottom{from{bottom:-300px;opacity:0}
+to{bottom:0px;opacity:1}}
+@keyframes animatebottom{from{bottom:-300px;opacity:0}
+to{bottom:0;opacity:1}}
+.w3-animate-zoom{-webkit-animation-name:zoom;-webkit-animation-duration:0.6s;animation-name:animatezoom;animation-duration:0.6s}
+@-webkit-keyframes animatezoom{from{transform:scale(0)}
+to{transform:scale(1)}}
+@keyframes animatezoom{from{transform:scale(0)}
+to{transform:scale(1)}}
 .w3-text-amber{color:#ffc107 !important}.w3-amber{color:#000 !important;background-color:#ffc107 !important}
 .w3-text-aqua{color:#00ffff !important}.w3-aqua{color:#000 !important;background-color:#00ffff !important}
 .w3-text-blue{color:#2196F3 !important}.w3-blue{color:#fff !important;background-color:#2196F3 !important}

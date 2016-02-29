@@ -34,6 +34,8 @@ angular.module('rotaract')
 			$("#"+x).fadeIn(1000);
 		}
 		$scope.hideTooltip = function(x){
+			$scope.photo =  null;
+
 			$("#"+x).fadeOut(100);
 		}
 
