@@ -1,7 +1,5 @@
 angular.module("rotaract")
-	.config(['$urlRouterProvider','$stateProvider','cfpLoadingBarProvider',function($urlRouterProvider,$stateProvider,cfpLoadingBarProvider){
-	    cfpLoadingBarProvider.latencyThreshold = 500;
-	    console.log(cfpLoadingBarProvider.latencyThreshold);
+	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 		$stateProvider
 
 			.state('treasurer',{
@@ -76,6 +74,8 @@ angular.module("rotaract")
 
 			$urlRouterProvider.otherwise('/guest/');
 	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
+
+		$rootScope.serverUrl = "http://132.140.160.119/";
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
 

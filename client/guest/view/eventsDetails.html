@@ -5,11 +5,14 @@
 		<br>
 		<div class="jumbotron">
 			<h3 class="text-primary">About {{event.name}}</h3>
-			<div style = "text-indent:100px" class=" text-justify">{{event.description}}</div>
+			<div style = "text-indent:100px" class=" text-justify">{{event.description}}
+
+			</div>
+			<h5 class="text-warning">This event was conducted on {{event.date}} at {{event.place}}. </h5>
 		</div>
 		<hr>
 		<div ng-show="showComments">
-			<h3 class="text-info">Comments</h3>
+			<h3 class="text-info"><i class="fa fa-comments"></i> Comments</h3>
 			<div class = "col-md-1"></div>
 				<div class="col-md-9">
 					<div ng-repeat = "x in messages" class = "">

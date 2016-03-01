@@ -35,6 +35,7 @@
 .img-holder{position:relative;height:200px;width:100%;overflow:hidden;}
 .custom-img{overflow:hidden;max-width:100%;max-height:100%;width:auto;margin:auto;}
 .no-padding{padding:0px;}
+.no-margin{margin:0px;}
 .custom-form{margin:10px;font-family:monospace;}
 .no-bottom-margin{margin-bottom:0px;}
 footer{margin-top:100px;position:relative;bottom:0px;}
@@ -54,4 +55,13 @@ img.push-bottom{position:absolute;bottom:0;left:0;right:0;}
 .hide-overflow{overflow:hidden;}
 .arial-font{font-family:arial;}
 .comic-font{font-family:cursive;}
+.monospace-font{font-family:monospace;}
+.georgia-font{font-family:Georgia, Serif;}
 .margin-bottom-6{margin-bottom:25px;}
+
+
+@media only screen and (min-width : 992px) {
+	.padding-md-right-20{
+   		padding-right:100px;
+	}
+}

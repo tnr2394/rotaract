@@ -1,4 +1,4 @@
-<ul class = "nav navbar-nav nav-tabs" style="width:100%;">
+<ul class = "nav navbar-nav nav-tabs hidden-xs" style="width:100%;">
 	<li> <a ui-sref = "guest.welcome"><i class = "fa fa-home"></i> Home</a></li>
 	<li> <a ui-sref = "guest.testimonials"><i class = "fa fa-quote-left"></i> Testimonials</a></li>
 	<li> <a ui-sref = "guest.events"><i class = "glyphicon glyphicon-tasks"></i> Events and Activities</a></li>
@@ -6,3 +6,32 @@
 	<li> <a ui-sref = "guest.about"><i class = "fa fa-university"></i> About</a></li>
 	<li> <a ui-sref = "guest.contact"><i class = "fa fa-phone-square"></i> Contact Us</a></li>
 </ul>
+
+<div class="row w3-container container-fluid visible-xs hidden-sm hidden-md hidden-ld" style="position:fixed; bottom:0px; left:0px; right:0px; z-index:10001; margin:0px; padding:0px;background-color:white">
+  <div class="">
+    <div class="" style="padding:0px; margin:0px;">
+        <button class="btn btn-primary btn-block arial-font" data-toggle="collapse" style="font-size:3vh"  href="#collapse1"><i class="fa fa-reorder"></i> MENU</button>
+    </div>
+    <div id="collapse1" class="collapse" style="">
+      
+      <ul class="list-group">
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.welcome"><i class = "fa fa-home"></i> Home</a></li>
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.testimonials"><i class = "fa fa-quote-left"></i> Testimonials</a></li>
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.events"><i class = "glyphicon glyphicon-tasks"></i> Events and Activities</a></li>
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.postHolders"><i class = "fa fa-bookmark"></i> Post Holders</a></li>
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.about"><i class = "fa fa-university"></i> About</a></li>
+			<li class="list-group-item"> <a class="menuItem" ui-sref = "guest.contact"><i class = "fa fa-phone-square"></i> Contact Us</a></li>
+		</ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+    $(".menuItem").click(function(){
+        $(".collapse").collapse('hide');
+    });
+});
+</script>

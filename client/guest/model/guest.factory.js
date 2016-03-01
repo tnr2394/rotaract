@@ -1,11 +1,10 @@
 angular.module('rotaract')
-	.factory('guestFactory',['$http','$q',function($http,$q){
+	.factory('guestFactory',['$http','$q','$rootScope',function($http,$q,$rootScope){
 		var obj = {};
-
 		obj.getPostHolders = function(){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_postholders.php")
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_postholders.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -16,7 +15,7 @@ angular.module('rotaract')
 		obj.getTestimonials = function(){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_testimonials.php")
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_testimonials.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -24,10 +23,10 @@ angular.module('rotaract')
 				});
 			return defer.promise;
 		}
+
 		obj.getEvents = function(){
 			var defer = $q.defer();
-
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_events.php")
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_events.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -35,10 +34,22 @@ angular.module('rotaract')
 				});
 			return defer.promise;
 		}
+
+		obj.getPSG = function(){
+			var defer = $q.defer();
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_PSG.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
+
 		obj.getAchievements = function(){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_achievements.php")
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_achievements.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -50,7 +61,7 @@ angular.module('rotaract')
 		obj.getEvent = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_event.php?id="+x)
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_event.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -60,10 +71,7 @@ angular.module('rotaract')
 		}
 		obj.getMessages = function(x,y){
 			var defer = $q.defer();
-/*			if(typeof for == "undefined"){
-				alert("No For specified.");
-			}*/
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_messages.php?id="+x+"&for="+y)
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_messages.php?id="+x+"&for="+y)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -74,7 +82,7 @@ angular.module('rotaract')
 		obj.getFirstPhoto = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_firstphoto.php?id="+x)
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_firstphoto.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -86,7 +94,7 @@ angular.module('rotaract')
 		obj.getPhotos = function(x){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/guest/get_photos.php?id="+x)
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/guest/get_photos.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function(err){
@@ -98,7 +106,7 @@ angular.module('rotaract')
 		obj.contact = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/guest/addContact.php",x)
+			$http.post($rootScope.serverUrl+"Angular/rotaract/server/guest/addContact.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -109,7 +117,7 @@ angular.module('rotaract')
 
 		obj.getAbout = function(x){
 			var defer = $q.defer();
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/president/getAbout.php")
+			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/getAbout.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {

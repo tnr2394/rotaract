@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/components-font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/snapjs/snap.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/w3.css">
 	<link rel="stylesheet" type="text/css" href="assets/scripts/dropzone.css">
@@ -18,8 +19,12 @@
 	<script type="text/javascript" src = "bower_components/angular/angular.min.js"></script>
 	
 	<script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
-	
+
+
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	
+	<script src="bower_components/snapjs/snap.js"></script>
+
 	<script type="text/javascript" src = "bower_components/ngstorage/ngStorage.min.js"></script>
 	<script type="text/javascript" src = "assets/scripts/dropzone.js"></script>
 	<script type="text/javascript" src = "bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -32,9 +37,14 @@
 		<div class="col-md-2 padding-10 col-xs-4 col-sm-2">
 			<img src = "./assets/rotaractlogo-min.png" class="img-responsive w3-image logoClass ">
 		</div>
-		<div class = "col-md-8  padding-10 col-xs-8 col-sm-8">
+		<div class = "col-md-8  padding-10 hidden-xs col-sm-8">
 			<h2 class="heading-font padding-10" style="font-size:3.5vw"><span class="text-danger ">Rotaract Club of </span><span class="text-primary">V.V.P. Engineering College</span></h2>
 		</div>
+
+		<div class = "padding-10 col-xs-8 hidden-sm hidden-md hidden-lg">
+			<h1 class="" style="font-size:1.05em;"><span class="text-danger ">Rotaract Club of </span><span class="text-primary">V.V.P. Engineering College</span></h1>
+		</div>
+	
 		<div class="col-md-2 padding-10 hidden-xs col-sm-2">
 			<img src = "./assets/vvplogo.png" class="img-responsive pull-right w3-image logoClass ">
 		</div>
@@ -51,14 +61,14 @@
 		</div>
 	</div>
 	<footer class = "row jumbotron no-bottom-margin myFooter">
-		<div class = "col-md-4 text-center ">
+		<div class = "hidden-xs col-md-4 text-center ">
 			<ul type="none" class="list"><h2 class=" text-primary put-underline"> Get Involved</h2>
 				<li><a href="#" class="btn btn-link">Join Rotaract</a></li>
 				<li><a href="#" class="btn btn-link">About Ryla</a></li>
 				<li><a href="#" class="btn btn-link">Mission for this year</a></li>
 			</ul>
 		</div>
-		<div class = "col-md-4 text-center">
+		<div class = "hidden-xs col-md-4 text-center">
 			<ul type="none" class="list"><h2 class=" text-primary put-underline">Useful Links</h2>
 				<li><a class="btn btn-link" href = "https://www.rotary.org/">Rotary International</a></li>
 				<li><a class="btn btn-link" href = "http://www.rotaryfoundationindia.org/">Rotary Foundation India.</a></li>
