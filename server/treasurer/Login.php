@@ -1,16 +1,6 @@
 <?php
 	
-
-	$con = mysqli_connect('localhost','root','') or die(mysql_error());
-
-	//error_reporting(0);
-	// error_reporting(-1);
-	// ini_set('display_errors', 'On');
-
-	// $con = mysqli_connect('localhost','root','') or die(mysql_error());
-	$con->set_charset('utf8');
-	mysqli_select_db($con,'rotaract') or die(mysql_error());
-
+	require 'config.php';
 	
 
 	$result = mysqli_query($con , " SELECT * FROM `currentpostholders` WHERE  `username` = '".$_GET['username']."' AND `password` = '".$_GET['password']."'") or die(mysqli_error($con));

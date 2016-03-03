@@ -1,5 +1,7 @@
 <?php
-	include("config.php");
+
+	require '../../config.php';
+	
 
 	$result = mysqli_query($con,"select * from postholders");
 	$ara = array();

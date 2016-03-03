@@ -74,6 +74,8 @@ angular.module("rotaract")
 
 			$urlRouterProvider.otherwise('/guest/');
 	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
+
+		$rootScope.serverUrl = "http://132.140.160.119/";
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
 

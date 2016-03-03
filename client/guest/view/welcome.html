@@ -1,17 +1,165 @@
-<h1>Welcome Guest!</h1>
+<div class="row">
+	<div class = "col-md-3 col-xs-12 col-sm-12 img-rounded margin-bottom-6">
+		<h3 class = "text-primary">What is Rotaract?</h3>
+		<div class = "lightColor text-justify">
+			Every Rotaractor were really happy and got many lessons of life. Elders are treasure of love and experience, all they wish is love and small part of our time. Thank you Mukesh Doshi for letting us visit the Old age home and congratulations to every rotaractor who were there.
+		</div>
+	</div>
 
-<div class = "row">
-	<div class="col-md-2">
+	<div class = "col-md-9 col-xs-12 col-sm-12">
+		<h2 class = "text-primary"><i class="fa fa-trophy"></i> Our Achievements</h2>	
+		<div class="">
+			<div class = "col-md-4 col-sm-6 col-xs-12 img-rounded margin-bottom-6" ng-repeat="z in achievements">
+				<div class="w3-card-2">	
+					<div class ="img-holder w3-light-grey">
+						<img ng-src="{{z.path}}" class = "img-responsive custom-img margin-auto">
+					</div>
+					<div class = "w3-container text-center bg-primary">
+						{{z.name}}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class ="clear-fix"><br><hr><br></div>
+
+
+<div class = "row padding-md-right-20" style="">
+
+	<div class = "col-md-12 col-xs-12 col-sm-12">
+		<h3 class="text-primary">Messages from Post holders</h3>
+	</div>
 	
+	<br>
+	
+	<div class="col-md-3 col-md-offset-1 img-rounded col-sm-10 col-xs-10 col-xs-offset-1 margin-bottom-6 text-center w3-card-12 w3-light-grey" ng-repeat="x in postHolders">
+		<h3 class = "w3-container lightColor arial-font text-left">{{x.post}}</h3>
+
+		<div class="img-holder"><img src = "{{x.photo}}" class = "img-responsive w3-image custom-img img-rounded img-thumbnail"></div>
+		<br>		
+		<div class="lightFont" style="">
+			{{x.message | cut:true:100:'...'}}
+			<a class="btn btn-link" ng-click="showModal($index)" href="">Read More </a>
+			<br><br>
+		</div>
 	</div>
-	<div class = "col-md-7">
-<blockquote>
-    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
-    <footer>From WWF's website</footer>
-  </blockquote>
-  <blockquote class="blockquote-reverse">
-    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
-    <footer>From WWF's website</footer>
-  </blockquote>
+</div>
+<div class = "clearfix"><br><hr><br></div>
+
+<div class = "row w3-light-grey">
+	<div class = "col-md-8 col-xs-12">
+		<h2 class = "text-primary"><i class="fa fa-binoculars"></i> Upcoming Events</h3>
+			
+			<div class = "pre-scrollable img-rounded" style="padding:0px;">
+				<div ng-repeat = "y in events" class="list-group-item">
+					<h5  class="text-info monospace-font lead"> <i class="fa"></i>&nbsp; {{y.name}}</h5>
+					<div class="text-justify georgia-font" style="margin-left:30px; font-size:100%">
+						{{y.description | cut:true:200:'.'}}
+					</div>
+				</div>
+			</div>
+			<br><br>
 	</div>
+
+	<div class = "col-md-4 col-xs-12">
+		<h2 class="text-primary"><i class="fa fa-calendar-check-o "></i> Recent Events</h3>
+			<table class = "table table-hover table-responsive w3-white img-rounded ">
+				<tr class = "" ng-repeat = "x in events">
+					<td>
+							<a ui-sref="guest.events/details({id : {{x.id}} })" ng-mouseover="showTooltip(x.id)" ng-mouseleave="hideTooltip(x.id)" class="text-info">
+								<i class="fa fa-angle-double-right text-danger"></i>&nbsp; {{x.name}}
+							</a>
+							<div class = "w3-container w3-dark-grey img-rounded" id="{{x.id}}" style="z-index:100; display:none;  max-width:100%; position:absolute; padding:20px;">
+								<div class = "text-center">
+									<img src="{{y.path}}" ng-repeat="y in photo"
+									class = "tooltipImg w3-img img-responsive img-thumbnail img-rounded">
+									<br><br>
+								</div>
+									<div class="w3-container">
+										{{x.description | cut:true:200:'...'}}
+									</div>
+							</div>
+					</td>
+					
+					
+				</tr>
+			</table>
+		
+	</div>
+	<div class = "clearfix"><br><hr><br></div>
+
+</div>
+			
+</div>
+
+<style>
+img.tooltipImg{
+	max-height:100px;
+	width: auto;
+}
+</style>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  $('.box').hover(function() {
+  	alert();
+    $(this).children('.overlay').fadeIn();
+  }, function() {
+    $(this).children('.overlay').fadeOut();
+  });
+
+});</script>
+
+
+
+
+
+
+
+
+
+<!-- Modal-->
+    
+<div id="myModal" style="z-index:10002" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header w3-container w3-dark-grey">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{modalContent.name}}</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class = "col-md-6">
+		      	<img src = "{{modalContent.photo}}" class = "img w3-image img-rounded img-responsive">
+            <br>
+      		</div>
+      		<div class = "col-md-6">
+      			<b>{{modalContent.name}} </b>acted as the <b>{{modalContent.post}}</b> of Rotaract Club of VVP Engineering College for the term <b>{{modalContent.term}}</b>. {{modalContent.name}}, the student of {{modalContent.dept}} Department with enrollment number {{modalContent.enroll}} is available on {{modalContent.phone}}.
+      		
+      		</div>
+      	</div>
+
+        <div class="row pre-scrollable scrollspy" data-spy="scroll" data-target=".navbar" data-offset="50" ng-show = "modalContent.message">
+          <div class = "col-md-12 w3-dark-grey">
+
+            <h3 class= "w3-container row w3-section ">Words of {{modalContent.name}}</h3>
+            <div class="messageFromPostHolder no-margin w3-dark-grey">{{modalContent.message}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer w3-container w3-dark-grey">
+        <button type="button" class="w3-btn w3-dark-grey" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
