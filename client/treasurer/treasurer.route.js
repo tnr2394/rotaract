@@ -38,6 +38,12 @@ angular.module("rotaract")
 				controller : 'addMessageCtrl'							
 			})
 
+			.state('treasurer.manageAccounts',{
+				url : '/manageAccounts',
+				templateUrl : 'treasurer/view/manageAccounts.html', 
+				controller : 'manageAccountsCtrl'							
+			})
+
 			.state('treasurer.addExpense',{
 				url : '/addExpense',
 				templateUrl : 'treasurer/view/addExpense.html', 

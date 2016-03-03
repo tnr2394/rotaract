@@ -43,19 +43,20 @@ angular.module('rotaract')
 			var defer = $q.defer();
 			$http.get("http://localhost/Angular/rotaract/server/president/getTestimonial.php?id="+x)
 				.then(function(success){
-					defer.resolve(success);
 				},function (err) {
-					  defer.reject(err);
 					  console.log(err);
 				});
 				return defer.promise;
 		}
 		obj.compareAccounts = function(x){
 			var defer = $q.defer();
+		
 			$http.get("http://localhost/Angular/rotaract/server/treasurer/accounts/compareAccounts.php")
 				.then(function(success){
+					
 					defer.resolve(success);
 				},function (err) {
+					
 					  defer.reject(err);
 					  console.log(err);
 				});
