@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('guest')
 	.controller('postHoldersCtrl',['$scope','guestFactory',function($scope,guestFactory){
 		activate();
 		function activate(){

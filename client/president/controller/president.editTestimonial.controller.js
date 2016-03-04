@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('president')
 	.controller('editTestimonialCtrl',['$scope','$state','presidentFactory','$stateParams',function($scope,$state,presidentFactory,$stateParams){
 		var id = $stateParams.id;
 		activate();

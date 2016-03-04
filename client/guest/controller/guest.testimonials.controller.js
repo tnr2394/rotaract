@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('guest')
 	.controller('testimonialsCtrl', ['$scope','guestFactory', function($scope,guestFactory){
 
 		activate();

@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('addEventCtrl', ['$scope','$state','treasurerFactory', function($scope,$state,treasurerFactory){
 		$scope.addEvent = function(x){
 			var data = {

@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('addIncome', ['$scope','$state','treasurerFactory', function($scope,$state,treasurerFactory){
 		$scope.addIncome = function(x){
 			treasurerFactory.addIncome(x)

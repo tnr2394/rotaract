@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('guest')
 	.controller('contactCtrl',['$scope','$state','guestFactory',function($scope,$state,guestFactory){
 		$scope.contact = function(x){
 			guestFactory.contact(x)

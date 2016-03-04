@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 angular.module('rotaract').controller('contactCtrl',['$scope','$state','guestFactory',function($scope,$state,guestFactory){$scope.contact=function(x){guestFactory.contact(x).then(function(response){if(response.data){alert("Your query has been submited. We will contact you soon.");$state.go('guest.welcome');}else{alert("There seems to be some error. Please try again later.");$state.go('guest.welcome');}},function(err){alert("There seems to be some error. Please try again later.");$state.go('guest.welcome');});}}]);
+=======
+angular.module('guest').controller('contactCtrl',['$scope','$state','guestFactory',function($scope,$state,guestFactory){$scope.contact=function(x){guestFactory.contact(x).then(function(response){if(response.data){alert("Your query has been submited. We will contact you soon.");$state.go('guest.welcome');}else{alert("There seems to be some error. Please try again later.");$state.go('guest.welcome');}},function(err){alert("There seems to be some error. Please try again later.");$state.go('guest.welcome');});}}]);
+>>>>>>> b0736ff2f8c8de7cbd40b05a47b51fee4fd2a13f

@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('editEventPhotosCtrl', ['$scope','$stateParams','treasurerFactory','$state', function($scope,$stateParams,treasurerFactory,$state){
 		$scope.id = $stateParams.id;
 		activate();

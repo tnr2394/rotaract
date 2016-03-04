@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('president')
 	.controller('welcomePresidentCtrl',['$scope','$state','$localStorage',function($scope,$state,$localStorage) {
 		$scope.presidentName = $localStorage.currentPostHolder.name;
 

@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('listPostholdersCtrl', ['$scope','$stateParams','$state', 'treasurerFactory',function($scope,$stateParams,$state,treasurerFactory){
 		
 		activate();

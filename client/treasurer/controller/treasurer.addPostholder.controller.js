@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('addPostholderCtrl', ['$scope','treasurerFactory', function($scope,treasurerFactory){
 		$scope.addPostholder = function (x) {
 			$scope.myPhoto;
