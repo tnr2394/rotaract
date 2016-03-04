@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('eventListCtrl', ['$scope','$state','treasurerFactory', function($scope,$state,treasurerFactory){
 		activate();
 		function activate(){

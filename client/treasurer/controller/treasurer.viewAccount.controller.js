@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('viewAccountCtrl',['$scope','$state','$localStorage','treasurerFactory',function($scope,$state,$localStorage,treasurerFactory) {
 		
 		treasurerFactory.getAccount()

@@ -1,5 +1,6 @@
 <?php
 	include("config.php");
+
 	$from = $_GET['from'];
 	$result = mysqli_query($con,"select * from ".$from) or die(mysqli_error($con));
 	$ara = array();

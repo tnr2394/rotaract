@@ -1,4 +1,6 @@
-angular.module('rotaract')
+angular.module('guest',[]);
+
+angular.module('guest')
 	.factory('guestFactory',['$http','$q','$rootScope',function($http,$q,$rootScope){
 		var obj = {};
 		obj.getPostHolders = function(){
@@ -129,6 +131,7 @@ angular.module('rotaract')
 
 		return obj;
 	}])
+	
 	.filter('cut', function () {
         return function (value, wordwise, max, tail) {
             if (!value) return '';

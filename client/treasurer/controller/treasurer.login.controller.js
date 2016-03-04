@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('treasurerLoginCtrl', ['$scope','$state','$localStorage','treasurerFactory', function($scope,$state,$localStorage,treasurerFactory){
 		
 		$scope.login = function(x){

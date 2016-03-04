@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('editPostholderCtrl', ['$scope','treasurerFactory','$stateParams','$state', function($scope,treasurerFactory,$stateParams,$state){
 		$scope.id = $stateParams.id;
 		activate();

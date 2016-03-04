@@ -1,1 +1,1 @@
-angular.module("rotaract",['ui.router','ngStorage','ngAnimate','angular-loading-bar']);
+angular.module("rotaract",['guest','treasurer','admin','president','ui.router','ngStorage','ngAnimate','angular-loading-bar']);

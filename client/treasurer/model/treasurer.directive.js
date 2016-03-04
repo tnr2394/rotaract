@@ -1,5 +1,5 @@
 $.getScript('http://cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js',function(){
-angular.module('rotaract')
+angular.module('treasurer')
   .directive('dropZone', function () {
     return {
         scope: {

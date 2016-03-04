@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('guest')
 	.controller('eventsDetailsCtrl', ['$scope','$stateParams', 'guestFactory', function($scope,$stateParams,guestFactory){
 		$scope.id = $stateParams.id;
 		$scope.showComments = false;

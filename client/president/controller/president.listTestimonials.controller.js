@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('president')
 	.controller('listTestimonialsCtrl',['$scope', '$state', 'presidentFactory',function($scope,$state,presidentFactory){
 		activate();
 		function activate(){

@@ -1,4 +1,4 @@
-angular.module("rotaract")
+angular.module('rotaract')
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
 		$stateProvider
 			.state('guest.welcome',{

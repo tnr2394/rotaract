@@ -1,4 +1,4 @@
-This zip file contains optimized resources for http://www.mylionsgroup.com/Angular/rotaract/client/#/guest/. The optimized resources are listed below in the format of: 
+This zip file contains optimized resources for http://www.mylionsgroup.com/Angular/rotaract/client. The optimized resources are listed below in the format of: 
 filename: url
 
 Note: We only include up to 10 MB of optimized contents. If the
@@ -6,15 +6,26 @@ optimized contents of your page are larger than 10 MB, we list them in
 this file too, with 'NOT INCLUDED' to indicate those URLs require
 further optimization.
 
-js/jquery.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/jquery/dist/jquery.min.js
+css/style.css: http://www.mylionsgroup.com/Angular/rotaract/client/style/style.css
+js/jquery.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/jquery/dist/jquery.js
 js/bootstrap.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/bootstrap/dist/js/bootstrap.min.js
-js/angular.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular/angular.min.js
+js/angular.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular/angular.js
+js/loading-bar.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular-loading-bar/build/loading-bar.min.js
 js/angular-animate.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular-animate/angular-animate.js
 js/ngStorage.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/ngstorage/ngStorage.min.js
-js/angular-ui-router.min.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular-ui-router/release/angular-ui-router.min.js
+js/angular-ui-router.js: http://www.mylionsgroup.com/Angular/rotaract/client/bower_components/angular-ui-router/release/angular-ui-router.js
 js/app.module.js: http://www.mylionsgroup.com/Angular/rotaract/client/app/app.module.js
 js/app.config.js: http://www.mylionsgroup.com/Angular/rotaract/client/app/app.config.js
 js/app.interceptor.js: http://www.mylionsgroup.com/Angular/rotaract/client/app/app.interceptor.js
+js/guest.factory.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/model/guest.factory.js
+js/guest.routes.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/guest.routes.js
+js/guest.welcome.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.welcome.controller.js
+js/guest.about.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.about.controller.js
+js/guest.contact.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.contact.controller.js
+js/guest.postHolders.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.postHolders.controller.js
+js/guest.testimonials.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.testimonials.controller.js
+js/guest.events.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.events.controller.js
+js/guest.eventsDetails.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.eventsDetails.controller.js
 js/admin.routes.js: http://www.mylionsgroup.com/Angular/rotaract/client/admin/admin.routes.js
 js/admin.welcome.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/admin/controller/admin.welcome.controller.js
 js/admin.login.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/admin/controller/admin.login.controller.js
@@ -28,15 +39,6 @@ js/president.listTestimonials.controller.js: http://www.mylionsgroup.com/Angular
 js/president.addTestimonial.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/president/controller/president.addTestimonial.controller.js
 js/president.compareAccounts.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/president/controller/president.compareAccounts.controller.js
 js/president.factory.js: http://www.mylionsgroup.com/Angular/rotaract/client/president/model/president.factory.js
-js/guest.routes.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/guest.routes.js
-js/guest.welcome.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.welcome.controller.js
-js/guest.about.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.about.controller.js
-js/guest.contact.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.contact.controller.js
-js/guest.postHolders.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.postHolders.controller.js
-js/guest.testimonials.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.testimonials.controller.js
-js/guest.events.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.events.controller.js
-js/guest.eventsDetails.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/controller/guest.eventsDetails.controller.js
-js/guest.factory.js: http://www.mylionsgroup.com/Angular/rotaract/client/guest/model/guest.factory.js
 js/treasurer.route.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/treasurer.route.js
 js/treasurer.factory.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/model/treasurer.factory.js
 js/treasurer.directive.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/model/treasurer.directive.js
@@ -54,6 +56,3 @@ js/treasurer.addMessage.controller.js: http://www.mylionsgroup.com/Angular/rotar
 js/treasurer.addExpense.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/controller/treasurer.addExpense.controller.js
 js/treasurer.addIncome.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/controller/treasurer.addIncome.controller.js
 js/treasurer.viewAccount.controller.js: http://www.mylionsgroup.com/Angular/rotaract/client/treasurer/controller/treasurer.viewAccount.controller.js
-image/Screenshot_20from_202016-02-17_2021_27_36.png: http://www.mylionsgroup.com/Angular/rotaract/server/events/18/Screenshot%20from%202016-02-17%2021:27:36.png
-image/microsoft_machine_learning.jpg: http://www.mylionsgroup.com/Angular/rotaract/server/events/3/microsoft_machine_learning.jpg
-image/10610481_523205417812289_317109204443073622_n.jpg: http://www.mylionsgroup.com/Angular/rotaract/server/events/17/10610481_523205417812289_317109204443073622_n.jpg

@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('president')
 	.controller('presidentLoginCtrl',['$scope','$state','$localStorage','presidentFactory',function($scope,$state,$localStorage,presidentFactory){
 		
 		$scope.login = function(x){

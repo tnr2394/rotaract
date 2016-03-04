@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('president')
 	.controller('addTestimonialCtrl',['$scope','$state','presidentFactory',function($scope,$state,presidentFactory){
 		$scope.addTestimonial = function(x){
 			presidentFactory.addTestimonial(x)

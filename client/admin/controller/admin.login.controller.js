@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('admin')
 	.controller('adminLoginCtrl',['$scope','$state','$localStorage','adminFactory',function($scope,$state,$localStorage,adminFactory){
 
 		$scope.visible=false;

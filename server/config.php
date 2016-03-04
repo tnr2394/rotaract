@@ -1,8 +1,8 @@
 <?php
 	error_reporting(0);
+
 	header("Access-Control-Allow-Origin: *");
 	header("Cache-Control: *"); //HTTP 1.1
-	error_reporting(0);
 	// error_reporting(-1);
 	// ini_set('display_errors', 'On');
 	$con = mysqli_connect('localhost','root','password') or die(mysql_error($con));

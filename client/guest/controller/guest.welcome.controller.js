@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('guest')
 	.controller('welcomeCtrl',['$scope','$state','guestFactory',function($scope,$state,guestFactory){
 		
 		activate();

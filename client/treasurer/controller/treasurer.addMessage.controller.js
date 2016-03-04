@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 	.controller('addMessageCtrl', ['$scope','$state','treasurerFactory', function($scope,$state,treasurerFactory){
 
 		$scope.addMessage = function(x){

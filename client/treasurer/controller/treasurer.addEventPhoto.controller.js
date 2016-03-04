@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer')
 .controller('addEventPhotoCtrl',['$scope','$state','treasurerFactory','$stateParams',function($scope,$state,treasurerFactory,$stateParams){
 	$scope.eventId = $stateParams.id;
 	$scope.action = 'http://localhost/Angular/rotaract/server/treasurer/events/singleUpload.php?id='+$scope.eventId;

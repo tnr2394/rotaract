@@ -1,4 +1,4 @@
-angular.module('rotaract')
+angular.module('treasurer',[])
 	.factory('treasurerFactory', ['$http','$q',function ($http,$q) {
 		var obj = {};
 		obj.doLogin = function(x){
