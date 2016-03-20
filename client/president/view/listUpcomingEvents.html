@@ -1,0 +1,22 @@
+<h2 class = "page-header text-danger"> Upcoming Events</h2>
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<table class = "table table-hover table-striped">
+			<tr>
+				<th>Event Name</th>
+				<th>Date </th>
+				<th>Place</th>
+				<th>Edit</th>
+				<th>Delete</th>
+
+			<tr ng-repeat = "x in eventList">
+				<td>{{x.name}}</td>
+				<td>{{x.date}}</td>
+				<td>{{x.place}}</td>
+				<td><button class = "btn btn-info" ng-click="goTo(x.id)"><i class = "fa fa-gears"></i> Edit</button></td>
+				<td><button class = "btn btn-danger" ng-click="deleteUpcomingEvent(x.id)"><i class = "fa fa-trash"></i> Delete</button></td>
+
+			</tr>
+		</table>
+	</div>
+</div>

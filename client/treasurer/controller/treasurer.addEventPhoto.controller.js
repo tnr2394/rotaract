@@ -1,7 +1,9 @@
 angular.module('treasurer')
-.controller('addEventPhotoCtrl',['$scope','$state','treasurerFactory','$stateParams',function($scope,$state,treasurerFactory,$stateParams){
+.controller('addEventPhotoCtrl',['$scope','$state','treasurerFactory','$stateParams','$rootScope',function($scope,$state,treasurerFactory,$stateParams,$rootScope){
 	$scope.eventId = $stateParams.id;
-	$scope.action = 'http://localhost/Angular/rotaract/server/treasurer/events/singleUpload.php?id='+$scope.eventId;
+
+	$scope.action = $rootScope.serverUrl+'Angular/rotaract/server/treasurer/events/singleUpload.php?id='+$scope.eventId;
+	$scope.mimeTypes = '.jpeg,.jpg';
 	activate($scope.eventId);
 	$scope.goTo = function(x){
 		$state.go(x);
@@ -17,6 +19,10 @@ angular.module('treasurer')
 			 alert("There is some error. Please try later.");
 			 console.log(err); 
 		})
+	}
+
+	$scope.myCallBackMethod = function(reponse) {
+		alert(response);
 	}
 
 

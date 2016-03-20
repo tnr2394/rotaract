@@ -1,11 +1,16 @@
 <h2 class = "page-header text-danger">Post Holders</h2>
-
+    
+<div class="well-lg bg-primary col-md-10 col-md-offset-1 col-xs-12 col-sm-12" ng-hide="postHolders">
+  <h1 class="text-center"><i class="fa fa-refresh fa-spin"></i></h1>
+</div>
 	<div class ="row" >
 		<div class = "col-md-12">
 			<div class="row">
 				<div class = "col-md-3 postHolderCard img-rounded" ng-click = "showModal($index)" ng-repeat="x in postHolders">
 					<div class="w3-card-2 w3-light-grey">
-						<img src = "{{x.photo}}" class = "img-responsive postHolderImg margin-auto">
+						<div class="achievement-holder">
+              <img src = "{{x.photo}}" class = "img-responsive achievement-holder margin-auto">
+            </div>
             <div class = "w3-container text-center w3-dark-grey">
 							{{x.name}}	
 						</div>

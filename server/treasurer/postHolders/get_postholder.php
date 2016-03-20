@@ -7,7 +7,7 @@
 	$ara = array();
 
 	while($x = mysqli_fetch_assoc($result)){
-		$x['photo'] = "http://localhost/Angular/rotaract/server/assets/postHolders/".$x['photo'];
+		$x['photo'] = $_SESSION['serverUrl']."assets/postHolders/".$x['photo'];
 		array_push($ara, $x);
 	}
 

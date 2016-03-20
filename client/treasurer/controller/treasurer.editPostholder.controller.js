@@ -16,12 +16,10 @@ angular.module('treasurer')
 			treasurerFactory.updatePostholder(x,$scope.myPhoto)
 				.then(function(response){
 					activate();
-
 					$state.go('treasurer.listPostholders');
 				},function (err) {
 					 alert("There seems to be some error. Please try again later.");
 					 console.log(err);
-
 					 $state.go('treasurer.listPostholders');
 				});
 		}

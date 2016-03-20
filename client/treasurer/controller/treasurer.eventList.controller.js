@@ -10,10 +10,20 @@ angular.module('treasurer')
 			});
 		}
 
-		$scope.goTo = function (x) {
+		$scope.editEvent = function (x) {
 			$state.go('treasurer.editEvent',{	'id' : x    });
 		}
 
+		$scope.deleteEvent = function(x){
+			if(confirm("Delete this event?")){
+				treasurerFactory.deleteEvent(x)
+					.then(function(response){
+						activate();
+					},function (err) {
+						 alert("Sorry! Event couldn't be updated right now. Please try again later."); 
+					}) 
+			}
 
+		}
 
 	}]);

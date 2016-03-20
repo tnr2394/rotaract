@@ -1,10 +1,67 @@
 angular.module('rotaract')
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
-		$stateProvider
+
+	$stateProvider
 			.state('guest.welcome',{
 				url : '/',
 				templateUrl : 'guest/view/welcome.html', 
-				controller : 'welcomeCtrl'
+				controller : 'welcomeCtrl',
+				resolve : {
+						events : ['guestFactory','$rootScope','$q',function(guestFactory,$rootScope,$q){
+
+								var defer = $q.defer();
+
+									guestFactory.getRecentEvents()
+									.then(function(response){
+										defer.resolve(response.data);
+									},function(err){
+										console.log(err);
+										defer.reject(err);
+									});
+									return defer.promise;
+							}],
+
+						achievements : ['guestFactory','$rootScope','$q',function(guestFactory,$rootScope,$q){
+									var defer = $q.defer();
+
+									guestFactory.getAchievements()
+									.then(function(response){
+										defer.resolve(response.data);
+									},function(err){
+										console.log(err);
+										defer.reject(err);
+									});
+									return defer.promise;
+							}],
+						PSG : ['guestFactory','$rootScope','$q',function(guestFactory,$rootScope,$q){
+									var defer = $q.defer();
+									guestFactory.getPSG()
+									.then(function(response){
+										defer.resolve(response.data);
+
+									},function(err){
+										alert("There is some error. Please try later.");
+										console.log(err);
+										defer.reject(err);
+									});
+									return defer.promise;
+							}],
+							upcomingEvents	 : ['guestFactory','$rootScope','$q',function(guestFactory,$rootScope,$q){
+									var defer = $q.defer();
+									guestFactory.getUpcomingEvents()
+									.then(function(response){
+										defer.resolve(response.data);
+									},function(err){
+										alert("There is some error. Please try later.");
+										console.log(err);
+										defer.reject(err);
+									});
+									$rootScope.showSpinner=false;
+									return defer.promise;
+							}]
+				}
+
+
 			})
 			.state('guest.postHolders',{
 				url : '/postHolders',

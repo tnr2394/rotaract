@@ -1,4 +1,4 @@
-<ul class = "nav navbar-nav nav-tabs" style="width:100%;" ng-show="!$state.is('treasurer.login')">
+<ul class = "nav navbar-nav nav-tabs hidden-xs hidden-sm" style="width:100%;" ng-show="!$state.is('treasurer.login')">
 				<li> <a href = "javascript:void(0);" ui-sref="treasurer.welcome"><i class="fa fa-home"></i> Home</a></li>
 				<li> <a href = "javascript:void(0);" ui-sref="treasurer.listPostholders"><i class="fa fa-bookmark"></i> Post Holders</a></li>
 				<li> <a href = "javascript:void(0);" ui-sref="treasurer.addEvent"><i class = "glyphicon glyphicon-tasks"></i> Events</a></li>
@@ -6,3 +6,30 @@
 				<li> <a href = "#">Contact Us</a></li>
 				<button class = "btn btn-danger pull-right" ng-click="logout()"><i class = "glyphicon glyphicon-log-out"></i> Logout</button>
 </ul>
+<div class="row w3-container container-fluid visible-xs visible-sm hidden-md hidden-ld" style="position:fixed; bottom:0px; left:0px; right:0px; z-index:10001; margin:0px; padding:0px;background-color:white">
+  <div class="">
+    <div class="" style="padding:0px; margin:0px;">
+        <button class="btn btn-primary btn-block arial-font" data-toggle="collapse" style="font-size:3vh"  href="#collapse1"><i class="fa fa-reorder"></i> MENU</button>
+    </div>
+    <div id="collapse1" class="collapse" style="">
+      
+      <ul class="list-group">
+				<li> <a href = "javascript:void(0);" class="btn-block list-group-item" ui-sref="treasurer.welcome"><i class="fa fa-home"></i> Home</a></li>
+				<li> <a href = "javascript:void(0);" class="btn-block list-group-item" ui-sref="treasurer.listPostholders"><i class="fa fa-bookmark"></i> Post Holders</a></li>
+				<li> <a href = "javascript:void(0);" class="btn-block list-group-item" ui-sref="treasurer.addEvent"><i class = "glyphicon glyphicon-tasks"></i> Events</a></li>
+				<li> <a href = "javascript:void(0);" class="btn-block list-group-item" ui-sref="treasurer.manageAccounts"><i class = "glyphicon glyphicon-tasks"></i> Manage Accounts</a></li>
+				<li><button class = "btn btn-danger" ng-click="logout()"><i class = "glyphicon glyphicon-log-out"></i> Logout</button></li>
+		</ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+    $(".menuItem").click(function(){
+        $(".collapse").collapse('hide');
+    });
+});
+</script>

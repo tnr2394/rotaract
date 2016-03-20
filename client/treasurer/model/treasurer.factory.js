@@ -1,10 +1,12 @@
-angular.module('treasurer',[])
-	.factory('treasurerFactory', ['$http','$q',function ($http,$q) {
+angular.module('treasurer',[]);
+angular.module('treasurer')
+	.factory('treasurerFactory', ['$http','$q','$rootScope',function ($http,$q,$rootScope) {
+
 		var obj = {};
 		obj.doLogin = function(x){
 		
 			var defer = $q.defer();
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/Login.php?username="+x.username+"&password="+x.password)
+			$http.get($rootScope.serverUrl+"/server/treasurer/Login.php?username="+x.username+"&password="+x.password)
 				.then(function(success){
 					defer.resolve(success);
 
@@ -18,8 +20,9 @@ angular.module('treasurer',[])
 
 		obj.addEvent = function(x){
 			var defer = $q.defer();
+			console.log('Factory');
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/addEventNewQuery.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/events/addEventNewQuery.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -30,7 +33,7 @@ angular.module('treasurer',[])
 		obj.addMessage = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/message/addMessageFromUser.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/message/addMessageFromUser.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -41,7 +44,7 @@ angular.module('treasurer',[])
 		obj.getAccount = function(){
 			var defer = $q.defer();
 
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/accounts/getaccountdetails.php")
+			$http.get($rootScope.serverUrl+"/server/treasurer/accounts/getaccountdetails.php")
 				.then(function(success){
 					defer.resolve(success);
 					alert(success.data);
@@ -53,7 +56,7 @@ angular.module('treasurer',[])
 		obj.addExpense = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/accounts/addExpense.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/accounts/addExpense.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -64,7 +67,7 @@ angular.module('treasurer',[])
 		obj.addIncome = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/accounts/addIncome.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/accounts/addIncome.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -75,7 +78,7 @@ angular.module('treasurer',[])
 		obj.deleteEvent = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/deleteEvent.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/deleteEvent.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -86,7 +89,7 @@ angular.module('treasurer',[])
 		obj.getEvent = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/getEvent.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/getEvent.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -97,7 +100,7 @@ angular.module('treasurer',[])
 		obj.getXid = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/message/getXid.php?from="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/message/getXid.php?from="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -109,7 +112,19 @@ angular.module('treasurer',[])
 		obj.getAllEvents = function(x){
 			var defer = $q.defer();
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/getAllEvents.php")
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/getAllEvents.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
+
+		obj.getContactQueries = function(x){
+			var defer = $q.defer();
+			console.log(x);
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/getContactQueries.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -122,7 +137,7 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Edit Event:");
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/editEvent.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/events/editEvent.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -134,7 +149,7 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Get Event Photos:");
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/getEventPhotos.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/getEventPhotos.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -147,7 +162,7 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Delete Photo :");
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/events/deleteImg.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/events/deleteImg.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -160,7 +175,7 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Get PostHolder :");
 			console.log(x);
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/get_postholder.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/treasurer/postHolders/get_postholder.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -171,7 +186,7 @@ angular.module('treasurer',[])
 		obj.getPostholders = function(){
 			var defer = $q.defer();
 			console.log("Get PostHolders");
-			$http.get("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/get_postholders.php")
+			$http.get($rootScope.serverUrl+"/server/treasurer/postHolders/get_postholders.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -183,10 +198,10 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Add PostHolders :");
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/addPostholder.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/postHolders/addPostholder.php",x)
 				.then(function(success){
 					alert(success.data);
-					uploadFile(file,"http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/addPostholderPhoto.php?id="+success.data);
+					uploadFile(file,$rootScope.serverUrl+"/server/treasurer/postHolders/addPostholderPhoto.php?id="+success.data);
 					defer.resolve(success);
 				},function (err) {
 					  defer.reject(err);
@@ -197,10 +212,10 @@ angular.module('treasurer',[])
 			var defer = $q.defer();
 			console.log("Add PostHolders :");
 			console.log(x);
-			$http.post("http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/editPostholder.php",x)
+			$http.post($rootScope.serverUrl+"/server/treasurer/postHolders/editPostholder.php",x)
 				.then(function(success){
 					if(typeof photo!='undefined'){
-						uploadFile(photo,"http://www.mylionsgroup.com/Angular/rotaract/server/treasurer/postHolders/addPostholderPhoto.php?id="+success.data)
+						uploadFile(photo,$rootScope.serverUrl+"/server/treasurer/postHolders/addPostholderPhoto.php?id="+success.data)
 						.then(function(res){
 						},function (err) {
 						 alert("Error Uploading photo.");
@@ -223,7 +238,7 @@ angular.module('treasurer',[])
                   headers: {'Content-Type': undefined}
                })
                .success(function(scs){
-               		alert("Photo has been uploaded."+scs);
+               		alert("Photo has been uploaded.");
                })
                .error(function(){
 	               	alert("Sorry, the photo couldn't be uploaded. Please Upload the photo from 'EDIT POSTHOLDER'.")

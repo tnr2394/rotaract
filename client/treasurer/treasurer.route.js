@@ -88,6 +88,14 @@ angular.module("rotaract")
 				    'id': '1'
 				  }
 			})
+			.state('treasurer.listContactQueries',{
+				url : '/contactQueries',
+				templateUrl : 'treasurer/view/contactQueries.html', 
+				controller : 'listContactQueriesCtrl',
+				params: {
+				    'id': '1'
+				  }
+			})
 			.state('treasurer.login',{
 				url : '/login',
 				templateUrl : 'treasurer/view/login.html', 

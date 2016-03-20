@@ -26,15 +26,5 @@ angular.module('treasurer')
 					 alert("Sorry! Event couldn't be updated right now. Please try again later."); 
 				}) 
 		}
-		$scope.deleteEvent = function(x){
-			if(confirm("Delete this event?")){
-				treasurerFactory.deleteEvent(x)
-					.then(function(response){
-						$state.go('treasurer.eventList');
-					},function (err) {
-						 alert("Sorry! Event couldn't be updated right now. Please try again later."); 
-					}) 
-			}
 
-		}
 	}])

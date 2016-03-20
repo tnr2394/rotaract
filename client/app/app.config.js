@@ -6,13 +6,13 @@ angular.module("rotaract")
 				url : '/treasurer',
 				views : {
 					top : {templateUrl : 'treasurer/view/menu.html',
-							controller : function($scope,$localStorage,$state){
+							controller : ['$scope','$localStorage','$state',function($scope,$localStorage,$state){
 								$scope.logout = function(){
 
   									$localStorage.currentPostHolder='null';
 									$state.go('guest.welcome');
 								}		
-							}
+							}]
 						},
 					main : {
 						template : "<ui-view></ui-view>"
@@ -25,7 +25,7 @@ angular.module("rotaract")
 				views : {
 					top : {templateUrl : 'guest/view/menu.html'},
 					main : {
-						template : "<ui-view></ui-view>",
+						template : '<ui-view></ui-view>',
 						controller : function(){}
 					}
 				}
@@ -36,13 +36,13 @@ angular.module("rotaract")
 				url : '/admin',
 				views : {
 					top : {templateUrl : 'admin/view/menu.html',
-							controller : function($scope,$state,$localStorage){
+							controller : ['$scope','$state','$localStorage',function($scope,$state,$localStorage){
 								$scope.logout = function(){
 
   									$localStorage.currentPostHolder='null';
 									$state.go('guest.welcome');
 								}
-							}
+							}]
 						},
 					main : {
 						template : "<ui-view></ui-view>"
@@ -55,14 +55,14 @@ angular.module("rotaract")
 				url : '/president',
 				views : {
 					top : {templateUrl : 'president/view/menu.html',
-							controller : function($scope,$localStorage,$state){
+							controller : ['$scope','$localStorage','$state',function($scope,$localStorage,$state){
 
 								$scope.logout = function(){
 
   									$localStorage.currentPostHolder='null';
 									$state.go('guest.welcome');
 								}		
-							}
+							}]
 						},
 					main : {
 						template : "<ui-view></ui-view>"
@@ -73,12 +73,13 @@ angular.module("rotaract")
 
 
 			$urlRouterProvider.otherwise('/guest/');
-	}]).run(function ($state,$stateParams,$rootScope,$localStorage) {
+	}]).run(['$state','$stateParams','$rootScope','$localStorage',function ($state,$stateParams,$rootScope,$localStorage) {
 
-		$rootScope.serverUrl = "http://132.140.160.119/";
+		// $rootScope.serverUrl = "http://www.mylionsgroup.com/Angular/rotaract";
+    	
+    	$rootScope.serverUrl = "http://localhost/rotaract";
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
-
     	$rootScope.$on('$stateChangeSuccess',function(event, toState, fromState){
 
 			if(toState.name.substr(0,9).localeCompare('treasurer')==0||toState.name.substr(0,9).localeCompare('president')==0||toState.name.substr(0,5).localeCompare('admin')==0)	{
@@ -96,4 +97,4 @@ angular.module("rotaract")
 				//console.log("IT HAS TO BE LOGGED IN OR GUEST");
 			}
     	});
-  });
+  }]);

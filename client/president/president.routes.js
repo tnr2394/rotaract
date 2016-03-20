@@ -34,11 +34,27 @@ angular.module("rotaract")
 				controller : 'listTestimonialsCtrl'
 					
 			})
+		.state('president.listUpcomingEvents',{
+				url : '/listUpcomingEvents',
+				templateUrl : 'president/view/listUpcomingEvents.html', 
+				controller : 'listUpcomingEventsCtrl'
+					
+			})
 		.state('president.editTestimonial',{
 	
 				url : '/editTestimonial/:id',
 				templateUrl : 'president/view/editTestimonial.html', 
 				controller : 'editTestimonialCtrl',
+				params : {
+			        id : '0'
+			    }
+					
+			})
+		.state('president.editUpcomingEvent',{
+	
+				url : '/editUpcomingEvent/:id',
+				templateUrl : 'president/view/editUpcomingEvent.html', 
+				controller : 'editUpcomingEventCtrl',
 				params : {
 			        id : '0'
 			    }
@@ -50,5 +66,12 @@ angular.module("rotaract")
 				controller : 'editAboutCtrl'
 					
 			})
+		.state('president.addUpcomingEvent',{
+				url : '/addUpcomingEvent',
+				templateUrl : 'president/view/addUpcomingEvent.html', 
+				controller : 'addUpcomingEventCtrl'
+					
+			})
+		
 
 }]);

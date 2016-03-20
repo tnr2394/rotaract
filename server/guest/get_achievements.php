@@ -14,7 +14,7 @@
 		$result = mysqli_query($con,"select * from eventphotos where eventid = '$id' order by id desc") or die(mysqli_error($con));
 		$nara = array();
 		while($y = mysqli_fetch_array($result)){
-			$x = "http://www.mylionsgroup.com/Angular/rotaract/server/".$y['path'];
+			$x = $_SESSION['serverUrl'].$y['path'];
 			return $x;
 		}
 	}

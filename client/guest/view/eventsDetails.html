@@ -1,12 +1,15 @@
 <h2 class = "page-header text-danger">{{event.name}}.</h2>
 <div class = "row">
 	<div class = "col-md-12">
+		<div class="well-lg bg-primary" ng-hide="photo">
+			<h1 class="text-center"><i class="fa fa-refresh fa-spin"></i></h1>
+		</div>
 		<img ng-src="{{photo}}" style="width:60%;height:auto;" class="img-responsive w3-image margin-auto">
 		<br>
-		<div class="jumbotron">
+		<div class="jumbotron" ng-show="event">
 			<h3 class="text-primary">About {{event.name}}</h3>
 			<div style = "text-indent:100px" class=" text-justify">{{event.description}}
-
+				
 			</div>
 			<h5 class="text-warning">This event was conducted on {{event.date}} at {{event.place}}. </h5>
 		</div>
@@ -25,7 +28,7 @@
 		</div>
 	</div>
 </div>
-<button style="font-size:25px; padding:10px; font-family:'Comic Sans MS', cursive, sans-serif" class="btn btn-block btn-primary" ng-click="showPhotos()">
+<button style="font-size:25px; padding:10px; font-family:'Comic Sans MS', cursive, sans-serif" class="btn btn-block btn-primary" ng-show="images" ng-click="showPhotos()">
 	<i class="fa fa-camera-retro"></i> Click me for Photos!
 </button>
 <br><br>

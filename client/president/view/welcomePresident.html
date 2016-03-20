@@ -1,6 +1,6 @@
 <h2 class="page-header text-danger">Welcome {{presidentName}}</h2>
 <div class = "row">
-	<div class = "col-md-offset-1 col-md-4">
+	<div class = "col-md-4 well-lg">
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.addTestimonial')">
 			<i class="fa fa-plus"></i> &nbsp;Add Testimonial
 		</button>
@@ -9,13 +9,22 @@
 		</button>		
 	</div>
 
-	<div class = "col-md-offset-1 col-md-4">
+	<div class = "col-md-4 well-lg">
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.editAbout')">
 			<i class="fa fa-plus"></i> &nbsp;Edit ABOUT ROTARACT
 		</button>
 		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.editContacts')">
-			<i class="fa fa-gears"></i> &nbsp;Edit Contacts
+			<i class="fa fa-book"></i> &nbsp;Contact Requests
 		</button>
+	</div>
+
+	<div class = "col-md-4 well-lg">
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.listUpcomingEvents')">
+			<i class="fa fa-binoculars"></i> &nbsp;Upcoming Events
+		</button>
+		<button class = "btn btn-block btn-lg btn-primary" ng-click="goTo('president.listTestimonials')">
+			<i class="fa fa-plus-circle"></i> &nbsp; Add Upcoming Event
+		</button>		
 	</div>
 
 </div>

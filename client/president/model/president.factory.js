@@ -4,7 +4,7 @@ angular.module('president',[])
 		var obj = {};
 		obj.doLogin = function(x){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/login.php?username="+x.username+"&password="+x.password)
+			$http.get($rootScope.serverUrl+"/server/president/login.php?username="+x.username+"&password="+x.password)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -17,7 +17,7 @@ angular.module('president',[])
 
 		obj.addTestimonial = function(x){
 			var defer = $q.defer();
-			$http.post($rootScope.serverUrl+"Angular/rotaract/server/president/addTestimonial.php",x)
+			$http.post($rootScope.serverUrl+"/server/president/addTestimonial.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -26,10 +26,66 @@ angular.module('president',[])
 				});
 				return defer.promise;
 		}
+		obj.addUpcomingEvent = function(x){
+			var defer = $q.defer();
+			$http.post($rootScope.serverUrl+"/server/president/addUpcomingEvent.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+		obj.deleteUpcomingEvent = function(x){
+			var defer = $q.defer();
+			console.log(x);
+			$http.get($rootScope.serverUrl+"/server/president/deleteUpcomingEvent.php?id="+x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
+		obj.getUpcomingEvent = function(x){
+			var defer = $q.defer();
+			$http.get($rootScope.serverUrl+"/server/president/getUpcomingEvent.php?id="+x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					defer.reject(err);
+				});
+				return defer.promise;
+		}
+
+		obj.editUpcomingEvent = function(x){
+			var defer = $q.defer();
+			console.log("Edit Event:");
+			console.log(x);
+			$http.post($rootScope.serverUrl+"/server/president/editUpcomingEvent.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
 
 		obj.getTestimonials = function(){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/getTestimonials.php")
+			$http.get($rootScope.serverUrl+"/server/president/getTestimonials.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+					  console.log(err);
+				});
+				return defer.promise;
+		}
+		obj.getAllUpcomingEvents = function(){
+			var defer = $q.defer();
+			$http.get($rootScope.serverUrl+"/server/president/getAllUpcomingEvents.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -41,7 +97,7 @@ angular.module('president',[])
 
 		obj.getTestimonial = function(x){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/getTestimonial.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/president/getTestimonial.php?id="+x)
 				.then(function(success){
 				},function (err) {
 					  console.log(err);
@@ -50,12 +106,7 @@ angular.module('president',[])
 		}
 		obj.compareAccounts = function(x){
 			var defer = $q.defer();
-<<<<<<< HEAD
-		
-			$http.get("http://localhost/Angular/rotaract/server/treasurer/accounts/compareAccounts.php")
-=======
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/treasurer/accounts/compareAccounts.php")
->>>>>>> b0736ff2f8c8de7cbd40b05a47b51fee4fd2a13f
+			$http.get($rootScope.serverUrl+"/server/treasurer/accounts/compareAccounts.php")
 				.then(function(success){
 					
 					defer.resolve(success);
@@ -68,7 +119,7 @@ angular.module('president',[])
 		}
 		obj.deleteTestimonial = function(x){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/deleteTestimonial.php?id="+x)
+			$http.get($rootScope.serverUrl+"/server/president/deleteTestimonial.php?id="+x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -80,7 +131,7 @@ angular.module('president',[])
 		
 		obj.editTestimonial = function(x){
 			var defer = $q.defer();
-			$http.post($rootScope.serverUrl+"Angular/rotaract/server/president/editTestimonial.php",x)
+			$http.post($rootScope.serverUrl+"/server/president/editTestimonial.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -92,7 +143,7 @@ angular.module('president',[])
 
 		obj.saveAbout = function(x){
 			var defer = $q.defer();
-			$http.post($rootScope.serverUrl+"Angular/rotaract/server/president/saveAbout.php",x)
+			$http.post($rootScope.serverUrl+"/server/president/saveAbout.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -105,7 +156,7 @@ angular.module('president',[])
 
 		obj.getAbout = function(x){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/getAbout.php")
+			$http.get($rootScope.serverUrl+"/server/president/getAbout.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -116,7 +167,7 @@ angular.module('president',[])
 		}
 		obj.saveContactUs = function(x){
 			var defer = $q.defer();
-			$http.post($rootScope.serverUrl+"Angular/rotaract/server/president/saveContactUs.php",x)
+			$http.post($rootScope.serverUrl+"/server/president/saveContactUs.php",x)
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {
@@ -129,7 +180,7 @@ angular.module('president',[])
 
 		obj.getContactUs = function(x){
 			var defer = $q.defer();
-			$http.get($rootScope.serverUrl+"Angular/rotaract/server/president/getContactUs.php")
+			$http.get($rootScope.serverUrl+"/server/president/getContactUs.php")
 				.then(function(success){
 					defer.resolve(success);
 				},function (err) {

@@ -1,6 +1,6 @@
 <div class="row">
 	<div class = "col-md-3 col-xs-12 col-sm-12 img-rounded margin-bottom-6">
-		<h3 class = "text-primary">What is Rotaract?</h3>
+		<h3 class = "text-primary">What is Rotaract ?</h3>
 		<div class = "lightColor text-justify">
 			Every Rotaractor were really happy and got many lessons of life. Elders are treasure of love and experience, all they wish is love and small part of our time. Thank you Mukesh Doshi for letting us visit the Old age home and congratulations to every rotaractor who were there.
 		</div>
@@ -8,11 +8,10 @@
 
 	<div class = "col-md-9 col-xs-12 col-sm-12">
 		<h2 class = "text-primary"><i class="fa fa-trophy"></i> Our Achievements</h2>	
-		<div class="">
 			<div class = "col-md-4 col-sm-6 col-xs-12 img-rounded margin-bottom-6" ng-repeat="z in achievements">
-				<div class="w3-card-2">	
-					<div class ="img-holder w3-light-grey">
-						<img ng-src="{{z.path}}" class = "img-responsive custom-img margin-auto">
+				<div class="w3-card-2">
+					<div class ="achievement-holder w3-light-grey">
+						<img ng-src="{{z.path}}" class = "img-responsive margin-auto achievement-holder">
 					</div>
 					<div class = "w3-container text-center bg-primary">
 						{{z.name}}
@@ -20,7 +19,6 @@
 				</div>
 			</div>
 
-		</div>
 	</div>
 </div>
 
@@ -55,7 +53,7 @@
 		<h2 class = "text-primary"><i class="fa fa-binoculars"></i> Upcoming Events</h3>
 			
 			<div class = "pre-scrollable img-rounded" style="padding:0px;">
-				<div ng-repeat = "y in events" class="list-group-item">
+				<div ng-repeat = "y in upcomingEvents" class="list-group-item">
 					<h5  class="text-info monospace-font lead"> <i class="fa"></i>&nbsp; {{y.name}}</h5>
 					<div class="text-justify georgia-font" style="margin-left:30px; font-size:100%">
 						{{y.description | cut:true:200:'.'}}

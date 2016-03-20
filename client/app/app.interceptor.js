@@ -1,6 +1,6 @@
 // Interceptor example for angularJs.
 
-angular.module('rotaract').factory('rotaractInterceptor', ['$q', function($q) { 
+angular.module('rotaract').factory('rotaractInterceptor', ['$q','$rootScope', function($q,$rootScope) { 
 
   var myInterceptor = {
           // On request success
@@ -39,7 +39,7 @@ angular.module('rotaract').factory('rotaractInterceptor', ['$q', function($q) {
          if(rejection.status == 401)
          {
            alert("Inside responseError");
-           window.location="http://localhost/Angular/rotaract/client/#/guest/";
+           window.location=$rootScope.serverUrl+'/client/';
          }
        
         console.log(rejection);

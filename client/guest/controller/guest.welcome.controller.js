@@ -1,40 +1,27 @@
-<<<<<<< HEAD
-angular.module('rotaract')
-=======
 angular.module('guest')
->>>>>>> b0736ff2f8c8de7cbd40b05a47b51fee4fd2a13f
-	.controller('welcomeCtrl',['$scope','$state','guestFactory',function($scope,$state,guestFactory){
-		
+	.controller('welcomeCtrl',['$scope','$state','guestFactory','$rootScope','events','achievements','PSG','upcomingEvents',function($scope,$state,guestFactory,$rootScope,events,achievements,PSG,upcomingEvents){
+
 		activate();
 		function activate(){
-			guestFactory.getEvents()
-			.then(function(response){
-				$scope.events = response.data;
-			},function(err){
-				alert("Sorry, Events Couldn't be loaded.");
-				console.log(err);
-			});
+
+			console.log("Events From Resolved.");
+			console.log(events);
+			console.log("-------------");
+
+			$scope.events = events;
+			console.log('Controller events : '+$scope.events);
 			
-			guestFactory.getAchievements()
-			.then(function(response){
-				$scope.achievements = response.data;
-			},function(err){
-				alert("Sorry, Events Couldn't be loaded.");
-				console.log(err);
-			});
+			$scope.achievements = achievements;
+			console.log('Controller achievements : '+$scope.achievements);
 
-			guestFactory.getPSG()
-				.then(function(response){
-					$scope.postHolders = response.data;
-					console.log("Success");
-					console.log($scope.postHolders);
+			$scope.postHolders = PSG;
+			console.log('Controller postholders : '+$scope.postHolders);
 
-				},function(err){
-					alert("There is some error. Please try later.");
-					console.log(err);
-				});
+			$scope.upcomingEvents = upcomingEvents;
+			console.log('Controller upcomingEvents : '+$scope.upcomingEvents);
 
 		}
+
 		$scope.showTooltip = function(x){
 			guestFactory.getPhotos(x)
 				.then(function (response) {
