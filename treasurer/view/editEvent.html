@@ -1,0 +1,32 @@
+<h2 class = "page-header text-danger">{{event.name}}</h2>
+<div class = "row well">
+	<div class = "col-md-2">
+	</div>
+	<form ng-submit="updateEvent()">
+	<div class = "col-md-8">
+		<table class = "table table-responsive table-hover">
+			<tr>
+				<td>Event Name : </td><td><input required type="text" class = "form-control" ng-model="event.name"></td>
+			</tr>
+			<tr>
+				<td>Event Description : </td><td><textarea required rows="10" class = "form-control" ng-model="event.description"></textarea></td>
+			</tr>
+			<tr>
+				<td>Event Date : </td><td><input required type="date" ng-model="event.date" class = "form-control"></td>
+			</tr>
+			<tr>
+				<td>
+					Event Place : </td><td><input required type="text" ng-model="event.place" class="form-control">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class ="col-md-6 col-md-offset-5">
+		<button type="submit" class = "btn btn-success">
+			Update and Continue&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+		</button>
+	</div>
+</form>
+
+</div>

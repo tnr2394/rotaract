@@ -1,0 +1,21 @@
+<h2 class = "page-header text-danger">Add Income</h2>
+<div class = "row">
+	<div class = "col-md-6">
+		<form ng-init = "x = {}" ng-submit = "addIncome(x)">
+			<input type="text" class = "form-control custom-form" placeholder = "Name" ng-model = "x['name']">
+			
+			<select ng-model = "x['group']" placeholder="Group" class = "form-control custom-form">
+				<option value="Donation" selected="true" >Donation</option>
+				<option value="Pass">Pass</option>
+				<option value="Advertisements">Advertisement</option>
+				<option value="Winning Money">Food</option>
+			</select>
+			
+			
+			<input type="text" class = "form-control custom-form" placeholder = "Amount" ng-model = "x['amount']">
+			<input type="text" class = "form-control custom-form" placeholder = "Details" ng-model = "x['details']">
+			
+			<button class = "btn btn-success custom-form pull-right" type = "submit">Submit</button>
+		</form>
+	</div>
+</div>

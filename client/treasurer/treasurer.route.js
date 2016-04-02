@@ -61,6 +61,11 @@ angular.module("rotaract")
 			})
 
 
+			.state('treasurer.joinRotaractInquiry',{
+				url : '/joinRotaractInquiry',
+				templateUrl : 'treasurer/view/joinRotaractInquiry.html', 
+				controller : 'joinRotaractInquiryCtrl'
+			})
 			.state('treasurer.welcome',{
 				url : '/welcome',
 				templateUrl : 'treasurer/view/welcomeTreasurer.html', 

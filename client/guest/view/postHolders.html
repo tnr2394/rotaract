@@ -11,8 +11,8 @@
 						<div class="achievement-holder">
               <img src = "{{x.photo}}" class = "img-responsive achievement-holder margin-auto">
             </div>
-            <div class = "w3-container text-center w3-dark-grey">
-							{{x.name}}	
+            <div class = "w3-container text-center" ng-class="(x.term==currentTerm)?'w3-blue':'w3-dark-grey'">
+							{{x.post}} : {{x.name}}	
 						</div>
 					</div>
 				</div>

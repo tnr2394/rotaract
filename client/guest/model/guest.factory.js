@@ -136,6 +136,18 @@ angular.module('guest',[])
 				return defer.promise;
 		}
 
+		obj.joinRotaract = function(x){
+			var defer = $q.defer();
+			console.log(x);
+			$http.post($rootScope.serverUrl+"/server/guest/addJoinRotaract.php",x)
+				.then(function(success){
+					defer.resolve(success);
+				},function (err) {
+					  defer.reject(err);
+				});
+				return defer.promise;
+		}
+
 		obj.getAbout = function(x){
 			var defer = $q.defer();
 			$http.get($rootScope.serverUrl+"/server/president/getAbout.php")

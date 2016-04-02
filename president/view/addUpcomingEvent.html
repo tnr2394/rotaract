@@ -1,0 +1,16 @@
+<h2 class="text-danger page-header"> Add Upcoming Event </h2>
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1 w3-light-grey well-lg">
+		<h3 class=""><kbd> <i class="fa fa-plus"></i> New Event</kbd></h3>
+		<br>
+		<form ng-submit="addUpcomingEvent(x)" >
+			<input type = "text"  class="comic-font form-control" ng-model="x['name']" placeholder="Event Name">
+			<textarea class="comic-font form-control" ng-model="x['description']" style="height:200px" placeholder="Event Description"></textarea>
+			<input type="text" class="form-control comic-font" ng-model="x['place']" placeholder="Event Place">
+			<input type="date" class="form-control comic-font" ng-model="x['date']" >
+			<br>
+			<button type="submit" class="btn btn-success pull-right">Create Upcoming Event</button>
+		</form>
+	</div>	
+</div>

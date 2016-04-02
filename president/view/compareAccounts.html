@@ -1,0 +1,52 @@
+<h2>Compare Accounts</h2>
+<div class = "row">
+	<div class = "col-md-6">
+		<div class="well">
+			<h3>Database Summary</h3>
+				<div class="well bg-info">
+					Total Income:{{dbin}}<br>
+					Toatl Outgoing:{{dbout}}<br>
+					<hr style="display: block; margin-top: 0.2em; margin-bottom: 0em
+					    border-style: inset;
+					    border-width: 1px;
+					    border-color:black;">
+
+					Total:{{dbtotal}}<br>
+				</div>
+
+			
+		</div>
+	</div>
+	<div class = "col-md-6">
+		<div class="well">
+			<h3>Log Summary</h3>
+				<div class="well bg-info">
+					Total Income:{{login}}<br>
+					Toatl Outgoing:{{logout}}
+					<hr style="display: block; margin-top: 0.2em; margin-bottom: 0em
+					    border-style: inset;
+					    border-width: 1px;
+					    border-color:black;">
+					Total:{{logtotal}}<br>
+				</div>
+		</div>
+	</div>
+	
+</div>
+<div class="row">
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4" style="text-align: center;">
+		<div ng-if=!status>
+			<i style="font-size: 10em;"class="fa fa-check text-info"></i>
+			<div style="font-size: 2em" class="text-primary">Accounts are upto date.</div>
+		</div>
+		
+		<div ng-if=status>
+			<i style="font-size: 10em;"class="fa fa-times text-danger"></i>	
+			<div style="font-size: 2em" class="text-danger">Log and DB doesn't match.</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>

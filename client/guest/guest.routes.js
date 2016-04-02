@@ -101,4 +101,10 @@ angular.module('rotaract')
 				controller : 'contactCtrl'
 					
 			})
+			.state('guest.joinRotaract',{
+				url : '/joinRotaract',
+				templateUrl : 'guest/view/joinRotaract.html', 
+				controller : 'joinRotaractCtrl'
+					
+			})
 		}]);

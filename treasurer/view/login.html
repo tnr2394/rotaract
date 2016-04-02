@@ -1,0 +1,21 @@
+<h1 class = "page-header text-danger">Treasurer Login</h1>
+
+<div class = "row">
+	<div class = "col-md-4">
+	</div>
+	<div class = "col-md-4">
+		<div class = "well" ng-init="visible = false">
+			<form ng-submit = "login(x)" ng-init = "x = {}">
+				<input type="text" class="form-control form-group" placeholder="User Name"  ng-model = "x['username']">
+				<input type="password" class="form-control form-group" placeholder="Password"  ng-model = "x['password']">
+				<button type = "submit" class="btn btn-success btn-sm">Login</button>
+			</form>
+
+			<div class="alert alert-warning" ng-if="visible">
+	    		<strong>Sorry!</strong> Username or Password is invalid. 
+	  		</div>
+		</div>
+	</div>
+	<div class = "col-md-4">
+	</div>
+</div>

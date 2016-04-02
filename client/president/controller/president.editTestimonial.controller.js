@@ -5,7 +5,6 @@ angular.module('president')
 		function activate(){
 			presidentFactory.getTestimonial(id)
 				.then(function(response){
-					
 					$scope.testimonial = response.data;
 					console.log($scope.testimonial);
 

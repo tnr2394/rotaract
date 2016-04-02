@@ -75,9 +75,9 @@ angular.module("rotaract")
 			$urlRouterProvider.otherwise('/guest/');
 	}]).run(['$state','$stateParams','$rootScope','$localStorage',function ($state,$stateParams,$rootScope,$localStorage) {
 
-		// $rootScope.serverUrl = "http://www.mylionsgroup.com/Angular/rotaract";
+		// $rootScope.serverUrl = "http://www.vvprotaract.club";
     	
-    	$rootScope.serverUrl = "http://localhost/rotaract";
+    	$rootScope.serverUrl = "http://localhost/Angular/rotaract";
     	$rootScope.$state = $state;
     	$rootScope.$stateParams = $stateParams;
     	$rootScope.$on('$stateChangeSuccess',function(event, toState, fromState){

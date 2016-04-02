@@ -1,0 +1,15 @@
+<h2 class="page-header text-danger">
+	Add Testimonial
+</h2>
+
+<div class = "row">
+	<div class = "col-md-2">
+	</div>
+	<div class="col-md-8">
+		<form ng-submit="addTestimonial(x)" ng-init="x={}">
+			<input type="text" class="form-control" placeholder = "Name" ng-model="x['author']">
+			<input type="text" class="form-control" placeholder = "Post" ng-model = "x['post']">
+			<textarea row='5' class="form-control" placeholder = "Message" col='20' ng-model="x['message']"></textarea>
+			<button class = "btn btn-success" type="submit">Add Testimonial</button>
+	</div>
+</div>

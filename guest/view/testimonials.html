@@ -1,0 +1,16 @@
+<h2 class = "page-header text-danger">Testimonials</h2>
+<div class="well-lg bg-primary col-md-10 col-md-offset-1 col-xs-12 col-sm-12" ng-hide="testimonials">
+  <h1 class="text-center"><i class="fa fa-refresh fa-spin"></i></h1>
+</div>
+
+<div class = "row">
+	<div class = "col-md-1"></div>
+	<div class = "col-md-10">
+		<blockquote ng-class="whatIsIt($index)" class = "margin-bottom-10" ng-repeat = "x in testimonials track by $index">
+			<i ng-class = "whatIsIt2($index)"></i>
+			<p style = "text-align:justify;">"{{x.message}}"</p>
+			<footer style = "font-weight:bold;">{{x.author}}, {{x.post}}</footer>
+		</blockquote>
+	</div>
+	<div class = "col-md-1"></div>
+</div>

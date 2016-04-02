@@ -2,7 +2,7 @@ angular.module('treasurer')
 .controller('addEventPhotoCtrl',['$scope','$state','treasurerFactory','$stateParams','$rootScope',function($scope,$state,treasurerFactory,$stateParams,$rootScope){
 	$scope.eventId = $stateParams.id;
 
-	$scope.action = $rootScope.serverUrl+'Angular/rotaract/server/treasurer/events/singleUpload.php?id='+$scope.eventId;
+	$scope.action = $rootScope.serverUrl+'/server/treasurer/events/singleUpload.php?id='+$scope.eventId;
 	$scope.mimeTypes = '.jpeg,.jpg';
 	activate($scope.eventId);
 	$scope.goTo = function(x){

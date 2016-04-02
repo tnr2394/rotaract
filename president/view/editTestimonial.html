@@ -1,0 +1,21 @@
+<h2 class="page-header text-danger">
+	Edit Testimonial
+</h2>
+<style>
+.form-control{
+	margin-bottom: 5px;
+	color:#444;
+}
+</style>
+
+<div class = "row">
+	<div class = "col-md-2">
+	</div>
+	<div class="col-md-8">
+		<form ng-submit="editTestimonial(testimonial)">
+			<input title="Name" type="text" class="form-control" placeholder = "Name" ng-model="testimonial['author']">
+			<input title="Post" type="text" class="form-control" placeholder = "Post" ng-model = "testimonial['post']">
+			<textarea title="Message" class="form-control" placeholder = "Message" style="height:30%" ng-model="testimonial['message']"></textarea>
+			<button class = "btn btn-success" type="submit">Done</button>
+	</div>
+</div>

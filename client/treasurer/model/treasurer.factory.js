@@ -47,12 +47,35 @@ angular.module('treasurer')
 			$http.get($rootScope.serverUrl+"/server/treasurer/accounts/getaccountdetails.php")
 				.then(function(success){
 					defer.resolve(success);
-					alert(success.data);
 				},function(err){
 					defer.reject(err);
 				});
 			return defer.promise;
 		}
+
+		obj.getJoinRotaractInquiry = function(){
+			var defer = $q.defer();
+
+			$http.get($rootScope.serverUrl+"/server/treasurer/getJoinRotaractInquiry.php")
+				.then(function(success){
+					defer.resolve(success);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
+		obj.updateJoinRotaractInquiry = function(x){
+			var defer = $q.defer();
+
+			$http.get($rootScope.serverUrl+"/server/treasurer/updateJoinRotaractInquiry.php?id="+x)
+				.then(function(success){
+					defer.resolve(success);
+				},function(err){
+					defer.reject(err);
+				});
+			return defer.promise;
+		}
+
 		obj.addExpense = function(x){
 			var defer = $q.defer();
 			console.log(x);

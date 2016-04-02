@@ -1,0 +1,30 @@
+<h2 class="page-header text-danger">Join Rotaract</h2>
+<style>
+.form-control{
+	margin-bottom: 10px;
+	border-radius: 14px;
+}
+</style>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 w3-card-4 well-lg w3-light-grey text-center">
+		<form ng-init="x={}" ng-submit = "joinRotaract(x)">
+			<input required type="text" class="form-control" ng-model="x['name']" placeholder="Name (first-name   last-name)">
+			<input required type="number" class="form-control" ng-model="x['enroll']" placeholder="Enrollment Number">
+			<select required ng-model="x['dept']" class="form-control">
+				<option value="" disabled selected>----Department----</option>
+				<option value="Mechanical Engineering">Mechanical Engineering</option>
+				<option value="Nano Technology">Nano Technology</option>
+				<option value="Chemical Engineering">Chemical Engineering</option>
+				<option value="Computer Engineering">Computer Engineering</option>
+				<option value="Civil Engineering">Civil Engineering</option>
+				<option value="Electrical Engineering">Electrical Engineering</option>
+				<option value="B.T.">B.T.</option>
+				<option value="E.C.">E.C.</option>
+				<option value="I.T.">I.T.</option>
+			</select>
+			<input type="email" required class="form-control" ng-model="x['email']" placeholder="Email Id">
+			<input type="phone" required class="form-control" ng-model="x['phone']" placeholder="Phone Number">
+			<button class="btn btn-success btn-rounded" type="submit">Submit</button>
+		</form>
+	</div>
+</div>

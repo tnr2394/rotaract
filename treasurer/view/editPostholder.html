@@ -1,0 +1,26 @@
+<h2 class = "page-header text-danger">Edit Post Holder {{ph.name}}</h2>
+
+<div class = "row">
+	<div class = "col-md-1"></div>
+	<div class = "col-md-10 w3-card-4">
+		<div class = "row">
+			<div class = "col-md-12 text-center">
+
+				<img ng-src="{{ph['photo']}}" class = "custom-img img img-reponsive margin-auto; w3-image img-thumbnail img-rounded text-center" style="height:500px;">				
+				</div>
+				<div class = "col-md-12">
+				<form ng-submit="updatePostholder(ph)" enctype="multipart/form-data">
+					<input type="text" class = "form-control custom-form" ng-model="ph['name']" placeholder="Name of the Postholder">
+					<input type="text" class = "form-control custom-form" ng-model="ph['dept']" placeholder="Department">
+					<input type="text" class = "form-control custom-form" ng-model="ph['enroll']" placeholder="Enrollment Number">
+					<input type="text" class = "form-control custom-form" ng-model="ph['phone']" placeholder="Phone Number">
+					<input type="text" class = "form-control custom-form" ng-model="ph['post']" placeholder="Post">
+					<input type="text" class = "form-control custom-form" ng-model="ph['term']" placeholder="Term From year - To year">
+					<input type="text" class = "form-control custom-form" ng-model="ph['gender']" placeholder="Gender">
+			        <input type="file" name="photo" id="fileToUpload" class = "form-control custom-form" file-model="myPhoto" accept="image/*" />
+					<textarea class = "form-control custom-form" ng-model="ph['message']" rows="7" placeholder = "Message from Post Holder"></textarea>
+					<button class= "btn btn-success" type = "submit">Save Changes</button>
+				</form>
+			</div>
+	</div>
+</div>

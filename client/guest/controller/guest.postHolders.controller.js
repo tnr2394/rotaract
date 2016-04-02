@@ -13,7 +13,8 @@ angular.module('guest')
 					console.log(err);
 				});
 		}
-
+		var d = new Date();
+		$scope.currentTerm = (d.getFullYear()-1)+'-'+d.getFullYear();
 		$scope.showModal = function(x){
 			
 			$scope.modalContent = $scope.postHolders[x];

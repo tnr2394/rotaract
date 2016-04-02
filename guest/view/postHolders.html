@@ -1,0 +1,74 @@
+<h2 class = "page-header text-danger">Post Holders</h2>
+    
+<div class="well-lg bg-primary col-md-10 col-md-offset-1 col-xs-12 col-sm-12" ng-hide="postHolders">
+  <h1 class="text-center"><i class="fa fa-refresh fa-spin"></i></h1>
+</div>
+	<div class ="row" >
+		<div class = "col-md-12">
+			<div class="row">
+				<div class = "col-md-3 postHolderCard img-rounded" ng-click = "showModal($index)" ng-repeat="x in postHolders">
+					<div class="w3-card-2 w3-light-grey">
+						<div class="achievement-holder">
+              <img src = "{{x.photo}}" class = "img-responsive achievement-holder margin-auto">
+            </div>
+            <div class = "w3-container text-center w3-dark-grey">
+							{{x.name}}	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!-- Modal-->
+    
+<div id="myModal" style="z-index:10002" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header w3-container w3-dark-grey">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{modalContent.name}}</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+      		<div class = "col-md-6 col-xs-12">
+		      	<img src = "{{modalContent.photo}}" class = "img w3-image img-rounded img-responsive">
+            <br>
+      		</div>
+      		<div class = "col-md-6 col-xs-12 text-justify">
+      			<b>{{modalContent.name}} </b>acted as the <b>{{modalContent.post}}</b> of Rotaract Club of VVP Engineering College for the term <b>{{modalContent.term}}</b>. {{modalContent.name}}, the student of {{modalContent.dept}} Department with enrollment number {{modalContent.enroll}} is available on {{modalContent.phone}}.
+      		
+      		</div>
+      	</div>
+        <hr>
+        <div class="row pre-scrollable scrollspy" data-spy="scroll" data-target=".navbar" data-offset="50" ng-show = "modalContent.message">
+          <div class = "col-md-12 w3-dark-grey">
+
+            <h3 class= "w3-container row w3-section ">Words of {{modalContent.name}}</h3>
+            <div class="messageFromPostHolder no-margin text-justify w3-dark-grey">{{modalContent.message}}
+            </div>
+          </div>
+          <div class = "col-md-12">
+
+            <h3 class = "w3-container row w3-section navbar">
+              <i class="fa fa-comments"></i> Comments about {{modalContent.name}}
+            </h3>
+            <div  ng-repeat="msg in modalContent.comments">
+              <div class="text-justify">{{msg.message}}<br><font class="text-primary"> - {{msg.name}}</font></div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer w3-container w3-dark-grey">
+        <button type="button" class="w3-btn w3-dark-grey" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

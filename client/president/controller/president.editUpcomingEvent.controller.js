@@ -21,13 +21,6 @@ angular.module('president')
 
 		
 		$scope.updateEvent=function () {
-			var year = $scope.event.date.getFullYear();
-			var month = $scope.event.date.getMonth();
-			var day = $scope.event.date.getDate();
-
-			var x = year+'/'+month+'/'+day;
-			var x = new Date(x);
-			$scope.event.date=x;
 			$scope.event.description=$scope.event.description.replace(/'|\\'/g, "\\'");
 			presidentFactory.editUpcomingEvent($scope.event)
 				.then(function(response){

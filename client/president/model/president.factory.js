@@ -99,7 +99,9 @@ angular.module('president',[])
 			var defer = $q.defer();
 			$http.get($rootScope.serverUrl+"/server/president/getTestimonial.php?id="+x)
 				.then(function(success){
+					defer.resolve(success);
 				},function (err) {
+					defer.reject(err);
 					  console.log(err);
 				});
 				return defer.promise;

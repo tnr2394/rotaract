@@ -2,16 +2,18 @@
 	<div class = "col-md-3 col-xs-12 col-sm-12 img-rounded margin-bottom-6">
 		<h3 class = "text-primary">What is Rotaract ?</h3>
 		<div class = "lightColor text-justify">
-			Every Rotaractor were really happy and got many lessons of life. Elders are treasure of love and experience, all they wish is love and small part of our time. Thank you Mukesh Doshi for letting us visit the Old age home and congratulations to every rotaractor who were there.
+			Rotaract brings together adults ages 18-30 to take action in their communities, develop their leadership and professional skills, and have fun. Rotary clubs sponsor them, but Rotaract members manage and fund their clubs independently.Most Rotaract activities take place at the club level. Rotaract clubs hold formal meetings, usually every two weeks, which feature speakers, special outings, social activities, discussions or visits to other clubs.
 		</div>
 	</div>
 
 	<div class = "col-md-9 col-xs-12 col-sm-12">
 		<h2 class = "text-primary"><i class="fa fa-trophy"></i> Our Achievements</h2>	
 			<div class = "col-md-4 col-sm-6 col-xs-12 img-rounded margin-bottom-6" ng-repeat="z in achievements">
-				<div class="w3-card-2">
+				<div class="w3-card-4">
 					<div class ="achievement-holder w3-light-grey">
-						<img ng-src="{{z.path}}" class = "img-responsive margin-auto achievement-holder">
+						<a ui-sref="guest.events/details({id : {{z.id}} })">
+							<img ng-src="{{z.path}}" class = "img-responsive margin-auto achievement-holder">
+						</a>
 					</div>
 					<div class = "w3-container text-center bg-primary">
 						{{z.name}}
@@ -56,7 +58,7 @@
 				<div ng-repeat = "y in upcomingEvents" class="list-group-item">
 					<h5  class="text-info monospace-font lead"> <i class="fa"></i>&nbsp; {{y.name}}</h5>
 					<div class="text-justify georgia-font" style="margin-left:30px; font-size:100%">
-						{{y.description | cut:true:200:'.'}}
+						{{y.description}}
 					</div>
 				</div>
 			</div>
@@ -69,7 +71,8 @@
 				<tr class = "" ng-repeat = "x in events">
 					<td>
 							<a ui-sref="guest.events/details({id : {{x.id}} })" ng-mouseover="showTooltip(x.id)" ng-mouseleave="hideTooltip(x.id)" class="text-info">
-								<i class="fa fa-angle-double-right text-danger"></i>&nbsp; {{x.name}}
+								<i class="fa fa-angle-double-right text-danger"></i>
+								&nbsp; {{x.name}}
 							</a>
 							<div class = "w3-container w3-dark-grey img-rounded" id="{{x.id}}" style="z-index:100; display:none;  max-width:100%; position:absolute; padding:20px;">
 								<div class = "text-center">

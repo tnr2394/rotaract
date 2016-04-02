@@ -1,0 +1,26 @@
+<h2 class = "page-header text-danger">Upload Photos of <font class = "text-primary">{{event.name}}</font></h2>
+<div class = "row">
+	<div class = "col-md-3">
+	</div>
+	<div id = 'myDiv' class = "col-md-6">
+		<div  
+		class="dropzone" 
+		drop-zone 
+		call-back="myCallBackMethod(response)" 
+		data-max="5"
+		action="{{action}}" 
+		auto-process="false" 
+		message="Drop file here or click to select" 
+		mimetypes="mimeTypes" 
+		id="fileDropzone">
+			
+		</div>
+	</div>
+	<div class = "col-md-3">
+	</div>
+</div>
+<div class = "row">
+	<div class = "col-md-12 jumbotron">
+		<button class = "btn btn-success" ng-click="goTo('treasurer.welcome')">Done</button>
+	</div>
+</div>

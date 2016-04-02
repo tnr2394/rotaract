@@ -11,7 +11,7 @@ $place=$data['place'];
 $id=$data['id'];
 
 if(isset($name)&&isset($id)&&isset($place)&&isset($date)&&isset($description)){
-	mysqli_query($con,"UPDATE `events` SET `name`='$name', `description`='$description',`date` = '$date', `place`='$place' where `id`=$id") or die();
+	mysqli_query($con,"UPDATE `upcomingevents` SET `name`='$name', `description`='$description',`date` = '$date', `place`='$place' where `id`=$id") or die();
 	// echo "Event updated.";
 	// echo "UPDATE `upcomingevents` SET `name`='$name', `description`='$description',`date` = '$date', `place`='$place' where `id`=$id";
 }
