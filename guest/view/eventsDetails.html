@@ -4,14 +4,16 @@
 		<div class="well-lg bg-primary" ng-hide="photo">
 			<h1 class="text-center"><i class="fa fa-refresh fa-spin"></i></h1>
 		</div>
-		<img ng-src="{{photo}}" style="width:60%;height:auto;" class="img-responsive w3-image margin-auto">
+		<img ng-src="{{photo}}" style="width:60%;height:auto;" class="img-responsive w3-image margin-auto mainPhoto">
 		<br>
 		<div class="jumbotron" ng-show="event">
 			<h3 class="text-primary">About {{event.name}}</h3>
-			<div style = "text-indent:100px" class=" text-justify">{{event.description}}
-				
+			<div class="eventDescription">
+				<div style = "text-indent:100px" class=" text-justify">{{event.description}}
+					
+				</div>
+				<h5 class="text-warning">This event was conducted on {{event.date}} at {{event.place}}. </h5>
 			</div>
-			<h5 class="text-warning">This event was conducted on {{event.date}} at {{event.place}}. </h5>
 		</div>
 		<hr>
 		<div ng-show="showComments">

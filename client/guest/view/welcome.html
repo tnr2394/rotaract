@@ -53,8 +53,14 @@
 <div class = "row w3-light-grey">
 	<div class = "col-md-8 col-xs-12">
 		<h2 class = "text-primary"><i class="fa fa-binoculars"></i> Upcoming Events</h3>
-			
 			<div class = "pre-scrollable img-rounded" style="padding:0px;">
+				
+				<div ng-hide="upcomingEvents[0]">
+					<h5  class="text-info monospace-font lead">
+						No Upcoming Events
+					</h5>
+				</div>
+				
 				<div ng-repeat = "y in upcomingEvents" class="list-group-item">
 					<h5  class="text-info monospace-font lead"> <i class="fa"></i>&nbsp; {{y.name}}</h5>
 					<div class="text-justify georgia-font" style="margin-left:30px; font-size:100%">

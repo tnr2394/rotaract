@@ -14,9 +14,8 @@ header("Cache-Control: *"); //HTTP 1.1
   $target = $upath.$name;
   $path=substr($target,6);
   if(move_uploaded_file($_FILES['file']['tmp_name'],$target)){
-   
-   echo $_FILES['file']['name']." Uploaded.";
-   mysqli_query($con,"UPDATE `postholders` set photo='$name' where id = '$_GET[id]'") or die(mysqli_error($con));
+     echo $_FILES['file']['name']." Uploaded.";
+     mysqli_query($con,"UPDATE `postholders` set photo='$name' where id = '$_GET[id]'") or die(mysqli_error($con));
   }
   else{
    echo "Failed to upload.";
